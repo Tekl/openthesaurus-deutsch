@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>German</string>
+	<key>CFBundleIdentifier</key>
+	<string>de.tekl.dictionary.openThesaurusDeutsch</string>
+	<key>CFBundleName</key>
+	<string>OpenThesaurus Deutsch</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2019.04.10</string>
+	<key>CFBundleVersion</key>
+	<string>2019.04.10</string>
+	<key>DCSDictionaryCopyright</key>
+	<string>Content: © 2019 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2019 Wolfgang Reszel, www.tekl.de</string>
+	<key>DCSDictionaryDefaultPrefs</key>
+	<dict>
+		<key>CheckForUpdates</key>
+		<string>2</string>
+		<key>ShowCopyright</key>
+		<string>1</string>
+	</dict>
+	<key>DCSDictionaryFrontMatterReferenceID</key>
+	<string>front_back_matter</string>
+	<key>DCSDictionaryManufacturerName</key>
+	<string>Wolfgang Reszel / Mac &amp; i (Heise Zeitschriften Verlag)</string>
+	<key>DCSDictionaryPrefsHTML</key>
+	<string>OpenThesaurus_prefs.html</string>
+	<key>DCSDictionaryXSL</key>
+	<string>OpenThesaurus.xsl</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2019 Wolfgang Reszel, www.tekl.de / Daniel Naber, www.openthesaurus.de</string>
+</dict>
+</plist>
