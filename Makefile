@@ -84,9 +84,6 @@ signinstaller:
 	xattr -rc Dictionary\ Installer.app
 	codesign -f --deep --options=runtime --timestamp --entitlements Entitlements.plist -s 3D3Y3WDMYF -v Dictionary\ Installer.app
 
-notarizeinstaller:
-	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionaryInstaller" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file ../Dictionary\ Installer/Dictionary\ Installer.app
-	
 notarize:
 	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/2019.04.10/$(DICT_NAME_NSPC).dmg
 
