@@ -1,0 +1,181 @@
+@charset "UTF-8";
+@namespace d url(http://www.apple.com/DTDs/DictionaryService-1.0.rng);
+
+@media (prefers-dark-interface) {
+	html {
+		-apple-color-filter: apple-invert-lightness();
+	}
+	html.apple_client-panel {
+		-apple-color-filter: none;
+	}
+}
+
+body { 
+	font: -apple-system-body;
+	font-family: -apple-system;
+	font-size: 12pt;
+	margin-left: 0.9em;
+	margin-right: 0em;
+	margin-top: 1.0em;
+	margin-bottom: 1.5em;
+	
+	color:  text;
+}
+
+a {
+	color: -webkit-link;
+	text-decoration: none;
+}
+
+
+.d /* d:entry */
+{
+	display: block;
+	font-size:84%;
+	line-height:130%;
+	margin-bottom: 2em;
+	font-weight:normal;
+}
+
+h1,h2 {
+	font-size: x-large;
+	font-weight: normal;
+	margin-bottom: 0.2em;
+	vertical-align: top;
+	margin-top: 0.5em;
+	padding-top: 0;
+	line-height: 100%;
+}
+
+h1:first-child, h2:first-child {
+	/*margin-bottom: 0.7em;*/
+}
+
+p {
+    margin: 0.6em 0 0.4em 1em;
+    padding: 0;
+}
+
+#front_back_matter p {
+    margin: 1em 0 0 0;
+}
+
+i {
+    font-weight:normal;
+    vertical-align: baseline;
+}
+
+.s1 {
+    font-size: 80%;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+span.column {
+	display: block;
+	border: solid 2px #c0c0c0;
+	border: solid 2px -apple-system-tertiary-label;
+	margin-left: 2em;
+	margin-right: 2em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	padding: 0.5em;
+}
+
+a.newVersion { 
+	color: #900 !important; 
+	font-weight:bold;
+	color: -apple-system-secondary-label !important;
+}
+
+.seealso {
+	font-size:80%;
+	color:gray;
+	color:-apple-system-secondary-label;
+	margin:1em 1em 0.5em 1.3em;
+	border-top: 1px solid #ccc;
+	border-top: 1px solid -apple-system-tertiary-label;
+	padding: 0.1em 0.3em 0.1em 0.3em;
+}
+
+.seealso a {
+	color: gray;
+	color: -apple-system-secondary-label;
+	text-decoration: none;
+}
+.seealso a:hover {
+	text-decoration:underline;
+}
+
+#u3 {
+  margin-left: 1.5em;
+}
+
+/* 
+ === Fußzeile ==============================
+ */
+
+.c {
+    margin: 1em 0;
+    line-height: 2em;
+    text-align:center;
+    font-size:70%;
+    color:#bbb;
+    border-top: #eee 1px solid;
+	color:-apple-system-tertiary-label;
+	border-top: -apple-system-tertiary-label 1px solid;
+	display:none;
+}
+
+body>.d:nth-last-child(2) div.c {
+	display: block;
+}
+
+.c span {
+    color:#bbb;
+    color:-apple-system-tertiary-label;
+}
+
+.c span a {
+    color:#bbb !important;
+    color:-apple-system-tertiary-label !important;
+	text-decoration: underline;
+}
+
+/* 
+ === Popover-Fenster =======================
+ */
+
+html.apple_client-panel body
+{ 
+	margin-top: 0em;
+}
+
+html.apple_client-panel h1, html.apple_client-panel h2 {
+	font-size: 120%;
+	-webkit-margin-after: 0.2em;
+}
+
+html.apple_client-panel h1:first-child, html.apple_client-panel h2:first-child {
+	margin-top: 0;
+}
+
+html.apple_client-panel .d
+{
+	font-family: -apple-system;
+	line-height: 120%;
+}
+
+html.apple_client-panel p {
+	-webkit-margin-before: 0.2em;
+}
+
+html.apple_client-panel .seealso {
+	display:none;
+}
+
+/* Dashboard-Widget */
+
+#definitionViewDiv .c, #definitionViewDiv .c span {
+    display: none;
+}

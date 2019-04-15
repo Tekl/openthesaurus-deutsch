@@ -1,16 +1,14 @@
 # Changelog
 
-Sorry, there’s no english changelog.
+Sorry, there’s no english changelog.
 
-## [v2019.04.10]
-
-### Hinzugefügt (Added)
-
-- Für die einfache Installation des Plug-ins per Doppelklick ist nun ein Installer enthalten. Dieser kann das Plug-in auch aktualisieren und deinstallieren.
+## [v2019.04.15]
 
 ### Geändert (Changed)
 
-- Datenbestand vom 09.04.2019 mit 136286 Einträgen.
+- Das Plug-ins wird wieder über ein Installations-Paket für alle Benutzer installiert. Über „Ort für die Installation ändern“ lässt es sich weiterhin für einzelne Benutzer installieren.
+
+- Datenbestand vom 09.04.2019 mit 136354 Einträgen.
 - Update für macOS 10.14 Mojave mit Unterstützung des Darkmode.
 
 ### Entfernt (Removed)

@@ -9,9 +9,9 @@
 	<key>CFBundleName</key>
 	<string>OpenThesaurus Deutsch</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2019.04.10</string>
+	<string>2019.04.15</string>
 	<key>CFBundleVersion</key>
-	<string>2019.04.10</string>
+	<string>2019.04.15</string>
 	<key>DCSDictionaryCopyright</key>
 	<string>Content: © 2019 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2019 Wolfgang Reszel, www.tekl.de</string>
 	<key>DCSDictionaryDefaultPrefs</key>

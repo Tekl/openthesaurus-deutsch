@@ -336,7 +336,7 @@ os.system("rm thesaurus.txt.zip")
 os.system("rm LICENSE.txt")
 
 print "\nVersionsnummern werden angepasst ..."
-rtfFiles = ['LIESMICH.rtfd/TXT.rtf','README.rtfd/TXT.rtf','LIESMICH.md','README.md','Makefile']
+rtfFiles = ['installer/finishup_de.rtfd/TXT.rtf','installer/finishup_en.rtfd/TXT.rtf','installer/LIESMICH.rtfd/TXT.rtf','installer/README.rtfd/TXT.rtf','LIESMICH.md','README.md','Makefile']
 for filename in rtfFiles:
 	print filename
 	if '.rtf' in filename:
@@ -349,6 +349,7 @@ for filename in rtfFiles:
 	pmdoc = re.sub(" v20\d+.\d+.\d+\"", " v"+ bundleVersion+"\"", pmdoc)
 	if filename == 'Makefile':
 		pmdoc = re.sub("([_ ])v20\d+.\d+.\d+", "\\1v"+ bundleVersion+"", pmdoc)
+		pmdoc = re.sub("/20\d+.\d+.\d+/", "/"+ bundleVersion+"/", pmdoc)
 	pmdoc = re.sub(u"20\d\d Wolfgang Reszel", datetime.datetime.today().strftime("%Y")+" Wolfgang Reszel", pmdoc)
 	pmdocFile.close()
 	if '.rtf' in filename:

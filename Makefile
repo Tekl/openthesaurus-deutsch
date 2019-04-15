@@ -1,9 +1,8 @@
 ###########################
 # Makefile
-#
-#
-#
-
+# for OpenThesaurus Deutsch v2019.04.15
+# by Wolfgang Reszel
+# https://github.com/Tekl/openthesaurus-deutsch
 ###########################
 
 # You need to edit these values.
@@ -46,23 +45,22 @@ DICT_BUILD_TOOL_BIN	    = $(DICT_BUILD_TOOL_DIR)/bin
 
 ###########################
 
-DICT_DEV_KIT_OBJ_DIR	=	./objects
-export	DICT_DEV_KIT_OBJ_DIR
+DICT_DEV_KIT_OBJ_DIR = ./objects
+export DICT_DEV_KIT_OBJ_DIR
 
-DESTINATION_FOLDER	=	~/Library/Dictionaries
-RM			=	/bin/rm
+DESTINATION_FOLDER = ~/Library/Dictionaries
+RM = /bin/rm
 
 CR = `echo "\r"`
 
 ###########################
 
-all: xml fromxml
+all: createxml build
 
-xml:
+createxml:
 	@/usr/bin/python createxml.py $(OS_VERSION) $(OS_VERSION2)
-	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
-fromxml:
+build:
 	@$(DICT_BUILD_TOOL_BIN)/build_dict.sh $(DICT_BUILD_OPTS) "$(DICT_NAME)" $(DICT_SRC_PATH) $(CSS_PATH) $(PLIST_PATH)
 	@mkdir "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries"
 	@mv -f "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary" "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"
@@ -71,27 +69,24 @@ fromxml:
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 dmg:
-	@echo "Creating Disk Image"
-	@mkdir releases/2019.04.10 | true
-	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas $(DICT_NAME_NSPC).dmgCanvas releases/2019.04.10/$(DICT_NAME_NSPC).dmg -setTextString version v2019.04.10
-	@open releases/2019.04.10/$(DICT_NAME_NSPC).dmg
+	@echo "Creating Installer and Disk Image"
+	@mkdir releases/2019.04.15/ | true
+	@/usr/local/bin/packagesbuild --identity "Developer ID Application: Wolfgang Reszel (3D3Y3WDMYF)" --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
+	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/2019.04.15/$(DICT_NAME_NSPC).dmg -setTextString version v2019.04.15
+	@open releases/2019.04.15/$(DICT_NAME_NSPC).dmg
 	@echo "- use 'make notarize' to notarize the disk image"
 	@echo "- use 'make nhistory' to check the notarization status"
 	@echo "- use 'make nstaple' to include the notarization ticket into the disk image"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
-	
-signinstaller:
-	xattr -rc Dictionary\ Installer.app
-	codesign -f --deep --options=runtime --timestamp --entitlements Entitlements.plist -s 3D3Y3WDMYF -v Dictionary\ Installer.app
 
 notarize:
-	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/2019.04.10/$(DICT_NAME_NSPC).dmg
+	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/2019.04.15/$(DICT_NAME_NSPC).dmg
 
 nhistory:
 	xcrun altool --notarization-history 0 -u "tekl@mac.com" -p "@keychain:AC_PASSWORD"
 
 nstaple:
-	xcrun stapler staple releases/2019.04.10/$(DICT_NAME_NSPC).dmg
+	xcrun stapler staple releases/2019.04.15/$(DICT_NAME_NSPC).dmg
 
 install:
 	@echo "Installing into $(DESTINATION_FOLDER)".

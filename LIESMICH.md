@@ -1,44 +1,44 @@
 OpenThesaurus Deutsch Lexikon-Plug-in
 -------------------------------------
 
-_Version: 2019.04.10 - Mac OS X 10.6 bis macOS 10.14_<br>
-_Copyright © 2019 Wolfgang Reszel_
+_Version: 2019.04.15 - Mac OS X 10.6 bis macOS 10.14_<br>
+_Copyright © 2019 Wolfgang Reszel und Daniel Naber_
 
-Dieses Plug-in erweitert Apples Lexikon-Programm (Dictionary.app) um einen **deutschen Thesaurus**.
+Dieses Plug-in erweitert die Lexikon-App von macOS um einen **deutschen Thesaurus**.
 
 Der vom Plug-in bereitgestellte Thesaurus basiert auf dem Online-Thesaurus [www.openthesaurus.de](https://www.openthesaurus.de/) von Daniel Naber.
 
 Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple-Lexikon-Plug-in wurde von Wolfgang Reszel entwickelt.
 
 **Updates und weiterführende Informationen:** [www.tekl.de](https://www.tekl.de).<br>
-**Support und Quellcode:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)
+**Support und Quellcode:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)<br>**Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)
 
 ### Installation
 
-Starten Sie das mitgelieferte Installations-Programm „Wörterbuch-Installation“ per Doppelklick und folgen Sie den Anweisungen.
+1. Laden Sie die aktuelle Version des Plug-ins herunter:<br>[OpenThesaurus Deutsch.dmg]()
+
+2. Öffnen Sie das Disk Image und starten das enthaltene Installations-Programm „OpenThesaurus Deutsch Installation“ per Doppelklick. Folgen Sie den Anweisungen.
+
+3. Wenn Sie das Plug-in nicht für alle Benutzer, sondern lediglich für den aktuellen Benutzer installieren möchten, klicken Sie im Installer auf „Ort für die Installation ändern …“ und wählen dort „Nur für mich installieren“ aus.
 
 ### Manuelle Installation ab Mac OS X 10.7
 
-1. Starten Sie das Programm „Lexikon.app“ und führen Sie den Befehl „Lexika-Ordner öffnen“ im Menü „Ablage“ aus.<br>
-![Schritt 1](images/manual installation/dict-inst-1cursor.png)
-
-2. Es öffnet sich nun ein Finder-Fenster, das den Ordner „Dictionaries“ zeigt. Ziehen Sie das Plug-in aus dem Disk-Image in dieses Finder-Fenster.<br>
-![Schritt 2](images/manual installation/dict-inst-2cursor.png)
-
-3. Beenden und starten Sie die Lexikon-Anwendung, damit sie das neu installierte Plug-in erkennt. Rufen Sie die Einstellungen des Lexikons auf (⌘+Komma), scrollen Sie zum Eintrag „OpenThesaurus Deutsch“ und aktivieren Sie diesen.<br>
-![Schritt 3](images/manual installation/dict-inst-3cursor.png)
+1. Laden Sie die Wörterbuch-Datei direkt herunter:<br>[OpenThesaurus Deutsch.dictionary](https://github.com/Tekl/openthesaurus-deutsch/raw/master/objects/Dictionaries/OpenThesaurus Deutsch.dictionary)
+2. Starten Sie das Programm „Lexikon.app“ und führen Sie den Befehl „Lexika-Ordner öffnen“ oder „Ordner Dictionaries öffnen“ im Menü „Ablage“ aus.<br>
+  ![Schritt 1](images/manual installation/dict-inst-1cursor.png)
+3. Es öffnet sich nun ein Finder-Fenster, das den Ordner „Dictionaries“ zeigt. Ziehen Sie das heruntergeladene Plug-in in dieses Finder-Fenster.<br>
+  ![Schritt 2](images/manual installation/dict-inst-2cursor.png)
+4. Beenden und starten Sie die Lexikon-Anwendung, damit sie das neu installierte Plug-in erkennt. Rufen Sie die Einstellungen des Lexikons auf (⌘+Komma), scrollen Sie zum Eintrag „OpenThesaurus Deutsch“ und aktivieren Sie diesen.<br>
+  ![Schritt 3](images/manual installation/dict-inst-3cursor.png)
 
 ### Manuelle Installation in Mac OS X 10.6
 
-1. Kopieren Sie das Plug-in aus dem Disk-Image in den Ordner `/Library/Dictionaries` (für alle Benutzer) oder `~/Library/Dictionaries` (für aktuellen Benutzer). Gegebenenfalls müssen Sie den Ordner anlegen.
-
-2. Beenden und starten Sie die Lexikon-Anwendung, damit sie das neu installierte Plug-in erkennt. Rufen Sie die Einstellungen des Lexikons auf (⌘+Komma), scrollen Sie zum Eintrag „OpenThesaurus Deutsch“ und aktivieren Sie diesen.
-
-3. Evtl. ist es nötig, den Mac neu zu starten oder den Prozess „DictionaryPanel“ in der Aktivitätsanzeige zu beenden, damit das Plug-in im Lexikon-Fenster (⌃⌘D) verfügbar ist.
+1. Laden Sie die Wörterbuch-Datei direkt herunter:<br>[OpenThesaurus Deutsch.dictionary](https://github.com/Tekl/openthesaurus-deutsch/raw/master/objects/Dictionaries/OpenThesaurus Deutsch.dictionary)
+2. Kopieren Sie das die heruntergeladene Datei in den Ordner `/Library/Dictionaries` (für alle Benutzer) oder `~/Library/Dictionaries` (für aktuellen Benutzer). Gegebenenfalls müssen Sie den Ordner anlegen.
+3. Beenden und starten Sie die Lexikon-Anwendung, damit sie das neu installierte Plug-in erkennt. Rufen Sie die Einstellungen des Lexikons auf (⌘+Komma), scrollen Sie zum Eintrag „OpenThesaurus Deutsch“ und aktivieren Sie diesen.
+4. Evtl. ist es nötig, den Mac neu zu starten oder den Prozess „DictionaryPanel“ in der Aktivitätsanzeige zu beenden, damit das Plug-in im Lexikon-Fenster (⌃⌘D) verfügbar ist.
 
 ### Deinstallation
-
-Starten Sie das mitgelieferte Installations-Programm, um das Wörterbuch von Ihrem Mac zu entfernen.
 
 Sie können das Plug-in auch von Hand aus dem Ordner `/Library/Dictionaries` oder `~/Library/Dictionaries` löschen und anschließend die Lexikon-Anwendung neu starten.
 

@@ -1,1 +1,0 @@
-/Users/Wolfgang/Documents/Projekte/Apple Dictionary-Plugins/dictionary-installer/Dictionary Installer.app
