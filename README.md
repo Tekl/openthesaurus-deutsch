@@ -1,4 +1,6 @@
-![](images/icons/dictplug_48.png)OpenThesaurus Deutsch Dictionary Plugin
+🇩🇪 [Deutsche Liesmich-Datei](LIESMICH.md)
+
+OpenThesaurus Deutsch Dictionary Plugin
 ---------------------------------------
 
 _Version: 2019.04.15 - Mac OS X 10.6 to macOS 10.14_<br>

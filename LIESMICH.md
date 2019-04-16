@@ -1,4 +1,4 @@
-![](images/icons/dictplug_48.png)OpenThesaurus Deutsch Lexikon-Plug-in
+OpenThesaurus Deutsch Lexikon-Plug-in
 -------------------------------------
 
 _Version: 2019.04.15 - Mac OS X 10.6 bis macOS 10.14_<br>
