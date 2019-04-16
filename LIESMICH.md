@@ -1,8 +1,10 @@
-OpenThesaurus Deutsch Lexikon-Plug-in
+![](images/icons/dictplug_48.png)OpenThesaurus Deutsch Lexikon-Plug-in
 -------------------------------------
 
 _Version: 2019.04.15 - Mac OS X 10.6 bis macOS 10.14_<br>
 _Copyright © 2019 Wolfgang Reszel und Daniel Naber_
+
+![](images/screenshots/OpenThesaurus_Screen_1.png)
 
 Dieses Plug-in erweitert die Lexikon-App von macOS um einen **deutschen Thesaurus**.
 
@@ -15,7 +17,7 @@ Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple
 
 ### Installation
 
-1. Laden Sie die aktuelle Version des Plug-ins herunter:<br>[OpenThesaurus Deutsch.dmg]()
+1. Laden Sie die aktuelle Version des Plug-ins herunter:<br>[OpenThesaurus Deutsch.dmg](https://github.com/Tekl/openthesaurus-deutsch/releases/latest)
 
 2. Öffnen Sie das Disk Image und starten das enthaltene Installations-Programm „OpenThesaurus Deutsch Installation“ per Doppelklick. Folgen Sie den Anweisungen.
 
@@ -25,11 +27,11 @@ Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple
 
 1. Laden Sie die Wörterbuch-Datei direkt herunter:<br>[OpenThesaurus Deutsch.dictionary](https://github.com/Tekl/openthesaurus-deutsch/raw/master/objects/Dictionaries/OpenThesaurus Deutsch.dictionary)
 2. Starten Sie das Programm „Lexikon.app“ und führen Sie den Befehl „Lexika-Ordner öffnen“ oder „Ordner Dictionaries öffnen“ im Menü „Ablage“ aus.<br>
-  ![Schritt 1](images/manual installation/dict-inst-1cursor.png)
+    ![Schritt 1](images/manual installation/dict-inst-1cursor.png)
 3. Es öffnet sich nun ein Finder-Fenster, das den Ordner „Dictionaries“ zeigt. Ziehen Sie das heruntergeladene Plug-in in dieses Finder-Fenster.<br>
-  ![Schritt 2](images/manual installation/dict-inst-2cursor.png)
+    ![Schritt 2](images/manual installation/dict-inst-2cursor.png)
 4. Beenden und starten Sie die Lexikon-Anwendung, damit sie das neu installierte Plug-in erkennt. Rufen Sie die Einstellungen des Lexikons auf (⌘+Komma), scrollen Sie zum Eintrag „OpenThesaurus Deutsch“ und aktivieren Sie diesen.<br>
-  ![Schritt 3](images/manual installation/dict-inst-3cursor.png)
+    ![Schritt 3](images/manual installation/dict-inst-3cursor.png)
 
 ### Manuelle Installation in Mac OS X 10.6
 

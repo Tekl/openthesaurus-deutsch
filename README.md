@@ -1,8 +1,10 @@
-OpenThesaurus Deutsch Dictionary Plugin
+![](images/icons/dictplug_48.png)OpenThesaurus Deutsch Dictionary Plugin
 ---------------------------------------
 
 _Version: 2019.04.15 - Mac OS X 10.6 to macOS 10.14_<br>
 _Copyright © 2019 Wolfgang Reszel and Daniel Naber_
+
+![](images/screenshots/OpenThesaurus_Screen_1.png)
 
 This plugin extends Apple's Dictionary Application with a **German thesaurus**.
 
@@ -15,7 +17,7 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 
 ### Installation
 
-1. Download the current Version of the dictionary plugin:<br>[OpenThesaurus_Deutsch.dmg]()
+1. Download the current Version of the dictionary plugin:<br>[OpenThesaurus_Deutsch.dmg](https://github.com/Tekl/openthesaurus-deutsch/releases/latest)
 
 2. Open the disk image and start the Installer “OpenThesaurus Deutsch Installation”. Follow its instructions.
 
@@ -24,11 +26,11 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 ### Manual installation for Mac OS X 10.7 or newer
 
 1. Download the plain dictionary file:<br>[OpenThesaurus Deutsch.dictionary](https://github.com/Tekl/openthesaurus-deutsch/raw/master/objects/Dictionaries/OpenThesaurus Deutsch.dictionary)
-2. Launch the program “Dictionary.app” und execute the command “Open dictionary folder” from the File menu.
+2. Launch the program “Dictionary.app” und execute the command “Open dictionary folder” from the File menu.<br>
    ![Schritt 1](images/manual%20installation/dict-inst-1cursor.png)
-3. The Finder will open a window with the folder “Dictionaries”. Drag and drop the downloaded plugin into this Finder window.
+3. The Finder will open a window with the folder “Dictionaries”. Drag and drop the downloaded plugin into this Finder window.<br>
    ![Schritt 2](images/manual%20installation/dict-inst-2cursor.png)
-4. Quit and restart the Dictionary-App, so it will se the newly installed plugin. Open the Preferences of Dictionary.app (⌘+Comma), scroll to the entry “OpenThesaurus Deutsch” and click the checkbox.
+4. Quit and restart the Dictionary-App, so it will se the newly installed plugin. Open the Preferences of Dictionary.app (⌘+Comma), scroll to the entry “OpenThesaurus Deutsch” and click the checkbox.<br>
    ![Schritt 3](images/manual%20installation/dict-inst-3cursor.png)
 
 ### Manual installation for Mac OS X 10.6

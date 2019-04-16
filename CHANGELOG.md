@@ -7,8 +7,7 @@ Sorry, there’s no english changelog.
 ### Geändert (Changed)
 
 - Das Plug-ins wird wieder über ein Installations-Paket für alle Benutzer installiert. Über „Ort für die Installation ändern“ lässt es sich weiterhin für einzelne Benutzer installieren.
-
-- Datenbestand vom 09.04.2019 mit 136354 Einträgen.
+- Datenbestand vom 14.04.2019 mit 136354 Einträgen.
 - Update für macOS 10.14 Mojave mit Unterstützung des Darkmode.
 
 ### Entfernt (Removed)
