@@ -6,7 +6,7 @@ OpenThesaurus Deutsch Dictionary Plugin
 _Version: 2019.04.15 - Mac OS X 10.6 to macOS 10.14_<br>
 _Copyright © 2019 Wolfgang Reszel and Daniel Naber_
 
-![](images/screenshots/OpenThesaurus_Screen_1.png)
+![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
 
 This plugin extends Apple's Dictionary Application with a **German thesaurus**.
 
@@ -15,7 +15,8 @@ The content of this plugin is based on the online thesaurus [www.openthesaurus.d
 The Python script to convert the OpenThesaurus dictionary into a dictionary plugin was developed by Wolfgang Reszel.
 
 **Updates and further informations:** [www.tekl.de](https://www.tekl.de).<br>
-**Support and source code:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)<br>**Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)
+**Support and source code:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)<br>**Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)<br>
+**Donation:** DE35430609674091450100 or [PayPal](https://www.paypal.me/WolfgangReszel) 
 
 ### Installation
 

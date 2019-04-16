@@ -4,7 +4,7 @@ OpenThesaurus Deutsch Lexikon-Plug-in
 _Version: 2019.04.15 - Mac OS X 10.6 bis macOS 10.14_<br>
 _Copyright © 2019 Wolfgang Reszel und Daniel Naber_
 
-![](images/screenshots/OpenThesaurus_Screen_1.png)
+![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
 
 Dieses Plug-in erweitert die Lexikon-App von macOS um einen **deutschen Thesaurus**.
 
@@ -13,7 +13,8 @@ Der vom Plug-in bereitgestellte Thesaurus basiert auf dem Online-Thesaurus [www.
 Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple-Lexikon-Plug-in wurde von Wolfgang Reszel entwickelt.
 
 **Updates und weiterführende Informationen:** [www.tekl.de](https://www.tekl.de).<br>
-**Support und Quellcode:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)<br>**Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)
+**Support und Quellcode:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)<br>**Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)<br>
+**Spende:** ***REMOVED***[PayPal](https://www.paypal.me/WolfgangReszel) 
 
 ### Installation
 
