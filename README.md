@@ -19,7 +19,7 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 
 ### Installation
 
-1. Download the current Version of the dictionary plugin:<br>[OpenThesaurus_Deutsch.dmg](https://github.com/Tekl/openthesaurus-deutsch/releases/latest)
+1. Download the current Version of the dictionary plugin:<br>[OpenThesaurus_Deutsch.dmg](https://github.com/Tekl/openthesaurus-deutsch/releases/download/2019.04.15/OpenThesaurus_Deutsch.dmg)
 
 2. Open the disk image and start the Installer “OpenThesaurus Deutsch Installation”. Follow its instructions.
 
@@ -27,7 +27,7 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 
 ### Manual installation for Mac OS X 10.7 or newer
 
-1. Download the plain dictionary file:<br>[OpenThesaurus Deutsch.dictionary](https://github.com/Tekl/openthesaurus-deutsch/raw/master/objects/Dictionaries/OpenThesaurus Deutsch.dictionary)
+1. Download the plain dictionary file:<br>[OpenThesaurus Deutsch.dictionary](https://github.com/Tekl/openthesaurus-deutsch/releases/download/2019.04.15/OpenThesaurus_Deutsch_dictionaryfile.zip)
 2. Launch the program “Dictionary.app” und execute the command “Open dictionary folder” from the File menu.<br>
    ![Schritt 1](images/manual%20installation/dict-inst-1cursor.png)
 3. The Finder will open a window with the folder “Dictionaries”. Drag and drop the downloaded plugin into this Finder window.<br>

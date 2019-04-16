@@ -17,7 +17,7 @@ Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple
 
 ### Installation
 
-1. Laden Sie die aktuelle Version des Plug-ins herunter:<br>[OpenThesaurus Deutsch.dmg](https://github.com/Tekl/openthesaurus-deutsch/releases/latest)
+1. Laden Sie die aktuelle Version des Plug-ins herunter:<br>[OpenThesaurus Deutsch.dmg](https://github.com/Tekl/openthesaurus-deutsch/releases/download/2019.04.15/OpenThesaurus_Deutsch.dmg)
 
 2. Öffnen Sie das Disk Image und starten das enthaltene Installations-Programm „OpenThesaurus Deutsch Installation“ per Doppelklick. Folgen Sie den Anweisungen.
 
@@ -25,7 +25,7 @@ Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple
 
 ### Manuelle Installation ab Mac OS X 10.7
 
-1. Laden Sie die Wörterbuch-Datei direkt herunter:<br>[OpenThesaurus Deutsch.dictionary](https://github.com/Tekl/openthesaurus-deutsch/raw/master/objects/Dictionaries/OpenThesaurus Deutsch.dictionary)
+1. Laden Sie die Wörterbuch-Datei direkt herunter:<br>[OpenThesaurus Deutsch.dictionary](https://github.com/Tekl/openthesaurus-deutsch/releases/download/2019.04.15/OpenThesaurus_Deutsch_dictionaryfile.zip)
 2. Starten Sie das Programm „Lexikon.app“ und führen Sie den Befehl „Lexika-Ordner öffnen“ oder „Ordner Dictionaries öffnen“ im Menü „Ablage“ aus.<br>
     ![Schritt 1](images/manual installation/dict-inst-1cursor.png)
 3. Es öffnet sich nun ein Finder-Fenster, das den Ordner „Dictionaries“ zeigt. Ziehen Sie das heruntergeladene Plug-in in dieses Finder-Fenster.<br>
