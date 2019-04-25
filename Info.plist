@@ -9,24 +9,24 @@
 	<key>CFBundleName</key>
 	<string>OpenThesaurus Deutsch</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2019.04.15</string>
+	<string>2019.04.25</string>
 	<key>CFBundleVersion</key>
-	<string>2019.04.15</string>
+	<string>2019.04.25</string>
 	<key>DCSDictionaryCopyright</key>
 	<string>Content: © 2019 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2019 Wolfgang Reszel, www.tekl.de</string>
 	<key>DCSDictionaryDefaultPrefs</key>
 	<dict>
-		<key>CheckForUpdates</key>
-		<string>2</string>
 		<key>ShowCopyright</key>
 		<string>1</string>
 	</dict>
 	<key>DCSDictionaryFrontMatterReferenceID</key>
 	<string>front_back_matter</string>
 	<key>DCSDictionaryManufacturerName</key>
-	<string>Wolfgang Reszel / Mac &amp; i (Heise Zeitschriften Verlag)</string>
+	<string>Wolfgang Reszel (www.tekl.de)</string>
 	<key>DCSDictionaryPrefsHTML</key>
 	<string>OpenThesaurus_prefs.html</string>
+	<key>DCSDictionaryUseSystemAppearance</key>
+	<true/>
 	<key>DCSDictionaryXSL</key>
 	<string>OpenThesaurus.xsl</string>
 	<key>LSHasLocalizedDisplayName</key>
