@@ -66,8 +66,9 @@ createxml:
 build:
 	@$(DICT_BUILD_TOOL_BIN)/build_dict.sh $(DICT_BUILD_OPTS) "$(DICT_NAME)" $(DICT_SRC_PATH) $(CSS_PATH) $(PLIST_PATH)
 	@mkdir "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries"
+	@mkdir releases/2019.04.25/ | true
 	@mv -f "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary" "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"
-	@cd objects/Dictionaries; zip -r "${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
+	@cd objects/Dictionaries; zip -r "../../releases/2019.04.25/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
 	@echo "Done."
 	@echo "Use 'make install' to install the dictionary or 'make dmg' to create the Disk Image."
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
