@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2019.04.15
+# for OpenThesaurus Deutsch v2019.04.25
 # by Wolfgang Reszel
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -41,6 +41,9 @@ endif
 ifeq ("$(wildcard $(DICT_BUILD_TOOL_DIR))","")
 DICT_BUILD_TOOL_DIR	    = /Applications/Utilities/Dictionary\ Development\ Kit
 endif
+ifeq ("$(wildcard $(DICT_BUILD_TOOL_DIR))","")
+DICT_BUILD_TOOL_DIR	    = /DevTools/Utilities/Dictionary\ Development\ Kit
+endif
 DICT_BUILD_TOOL_BIN	    = $(DICT_BUILD_TOOL_DIR)/bin
 
 ###########################
@@ -48,7 +51,7 @@ DICT_BUILD_TOOL_BIN	    = $(DICT_BUILD_TOOL_DIR)/bin
 DICT_DEV_KIT_OBJ_DIR = ./objects
 export DICT_DEV_KIT_OBJ_DIR
 
-DESTINATION_FOLDER = ~/Library/Dictionaries
+DESTINATION_FOLDER = /Library/Dictionaries
 RM = /bin/rm
 
 CR = `echo "\r"`
@@ -64,32 +67,30 @@ build:
 	@$(DICT_BUILD_TOOL_BIN)/build_dict.sh $(DICT_BUILD_OPTS) "$(DICT_NAME)" $(DICT_SRC_PATH) $(CSS_PATH) $(PLIST_PATH)
 	@mkdir "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries"
 	@mv -f "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary" "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"
-	@cd objects/Dictionaries
-	@zip -r ${DICT_NAME_NSPC}_dictionaryfile.zip $(DICT_NAME).dictionary
-	@cd ../..
+	@cd objects/Dictionaries; zip -r "${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
 	@echo "Done."
 	@echo "Use 'make install' to install the dictionary or 'make dmg' to create the Disk Image."
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 dmg:
 	@echo "Creating Installer and Disk Image"
-	@mkdir releases/2019.04.15/ | true
+	@mkdir releases/2019.04.25/ | true
 	@/usr/local/bin/packagesbuild --identity "Developer ID Application: Wolfgang Reszel (3D3Y3WDMYF)" --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
-	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/2019.04.15/$(DICT_NAME_NSPC).dmg -setTextString version v2019.04.15
-	@open releases/2019.04.15/$(DICT_NAME_NSPC).dmg
+	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/2019.04.25/$(DICT_NAME_NSPC).dmg -setTextString version v2019.04.25
+	@open releases/2019.04.25/$(DICT_NAME_NSPC).dmg
 	@echo "- use 'make notarize' to notarize the disk image"
 	@echo "- use 'make nhistory' to check the notarization status"
 	@echo "- use 'make nstaple' to include the notarization ticket into the disk image"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 notarize:
-	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/2019.04.15/$(DICT_NAME_NSPC).dmg
+	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/2019.04.25/$(DICT_NAME_NSPC).dmg
 
 nhistory:
 	xcrun altool --notarization-history 0 -u "tekl@mac.com" -p "@keychain:AC_PASSWORD"
 
 nstaple:
-	xcrun stapler staple releases/2019.04.15/$(DICT_NAME_NSPC).dmg
+	xcrun stapler staple releases/2019.04.25/$(DICT_NAME_NSPC).dmg
 
 install:
 	@echo "Installing into $(DESTINATION_FOLDER)".
