@@ -6,9 +6,12 @@ Sorry, there’s no english changelog.
 
 ### Geändert (Changed)
 
-- Das Lexikon flackert nun nicht mehr bei der Eingabe von Suchbegriffen im Darkmode von macOS 10.14 Mojave.
-- Datenbestand vom 24.04.2019 mit 136480 Einträgen.
 - Das Installationsprogramm enthält nun eine Deinstallations-Routine.
+- Datenbestand vom 24.04.2019 mit 136480 Einträgen.
+
+### Fehler behoben (Fixed)
+
+- Das Lexikon flackert nun nicht mehr bei der Eingabe von Suchbegriffen im Darkmode von macOS 10.14 Mojave.
 
 ## [v2019.04.15]
 
