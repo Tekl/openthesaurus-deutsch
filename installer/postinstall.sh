@@ -13,12 +13,17 @@ try
 	tell application "System Events" to set dictPanelID to unix id of process "com.apple.DictionaryServiceHelp"
 	do shell script "kill -s QUIT " & dictPanelID
 end try
-
 try
-	set locationToPlist to homeDir & "/Library/Preferences/com.apple.Dictionary.plist"
-
 	tell application "System Events"
-		set propList to property list file locationToPlist
+
+		try
+			set locationToPlist to homeDir & "/Library/Preferences/com.apple.Dictionary.plist"
+			set propList to property list file locationToPlist
+		on error
+			set locationToPlist to homeDir & "/Library/Containers/com.apple.Dictionary/Data/Library/Preferences/com.apple.Dictionary.plist"
+			set propList to property list file locationToPlist
+		end try
+
 		set dicNode to property list item "dictionaries" of property list item 0 of property list item "window settings" of propList
 		set dicNodeItems to (every property list item of dicNode)
 
@@ -53,9 +58,15 @@ end try
 
 try
 	if BundlePath begins with homeDir then set BundlePath to homeDir & "/Library/Containers/com.apple.Dictionary/Data/" & characters (length of homeDir) thru -1 of BundlePath
-	set locationToPlist to homeDir & "/Library/Preferences/com.apple.DictionaryServices.plist"
-
 	tell application "System Events"
+		try
+			set locationToPlist to homeDir & "/Library/Preferences/com.apple.DictionaryServices.plist"
+			set propList to property list file locationToPlist
+		on error
+			set locationToPlist to homeDir & "/Library/Containers/com.apple.Dictionary/Data/Library/Preferences/com.apple.DictionaryServices.plist"
+			set propList to property list file locationToPlist
+		end try
+
 		try
 			set dictPanelID to unix id of process "DictionaryPanel"
 			do shell script "kill -s QUIT " & dictPanelID
