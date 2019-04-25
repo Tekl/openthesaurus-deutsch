@@ -2,15 +2,12 @@
 @namespace d url(http://www.apple.com/DTDs/DictionaryService-1.0.rng);
 
 @media (prefers-dark-interface) {
-	html {
-		-apple-color-filter: apple-invert-lightness();
-	}
-	html.apple_client-panel {
-		-apple-color-filter: none;
+	body {
+		color: white;
 	}
 }
 
-body { 
+body {
 	font: -apple-system-body;
 	font-family: -apple-system;
 	font-size: 12pt;
@@ -18,7 +15,7 @@ body {
 	margin-right: 0em;
 	margin-top: 1.0em;
 	margin-bottom: 1.5em;
-	
+
 	color:  text;
 }
 
@@ -82,8 +79,8 @@ span.column {
 	padding: 0.5em;
 }
 
-a.newVersion { 
-	color: #900 !important; 
+a.newVersion {
+	color: #900 !important;
 	font-weight:bold;
 	color: -apple-system-secondary-label !important;
 }
@@ -111,7 +108,7 @@ a.newVersion {
   margin-left: 1.5em;
 }
 
-/* 
+/*
  === Fußzeile ==============================
  */
 
@@ -142,12 +139,12 @@ body>.d:nth-last-child(2) div.c {
 	text-decoration: underline;
 }
 
-/* 
+/*
  === Popover-Fenster =======================
  */
 
 html.apple_client-panel body
-{ 
+{
 	margin-top: 0em;
 }
 
