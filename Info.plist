@@ -9,11 +9,11 @@
 	<key>CFBundleName</key>
 	<string>OpenThesaurus Deutsch</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2019.04.25</string>
+	<string>2020.03.16</string>
 	<key>CFBundleVersion</key>
-	<string>2019.04.25</string>
+	<string>2020.03.16</string>
 	<key>DCSDictionaryCopyright</key>
-	<string>Content: © 2019 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2019 Wolfgang Reszel, www.tekl.de</string>
+	<string>Content: © 2020 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2020 Wolfgang Reszel, www.tekl.de</string>
 	<key>DCSDictionaryDefaultPrefs</key>
 	<dict>
 		<key>ShowCopyright</key>
@@ -32,6 +32,6 @@
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2019 Wolfgang Reszel, www.tekl.de / Daniel Naber, www.openthesaurus.de</string>
+	<string>© 2020 Wolfgang Reszel, www.tekl.de / Daniel Naber, www.openthesaurus.de</string>
 </dict>
 </plist>

@@ -3,8 +3,8 @@
 OpenThesaurus Deutsch Dictionary Plugin
 ---------------------------------------
 
-_Version: 2019.04.25 - Mac OS X 10.6 to macOS 10.14_<br>
-_Copyright © 2019 Wolfgang Reszel and Daniel Naber_
+_Version: 2020.03.16 - Mac OS X 10.6 to macOS 10.14_<br>
+_Copyright © 2020 Wolfgang Reszel and Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
 
