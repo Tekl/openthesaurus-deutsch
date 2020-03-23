@@ -10,7 +10,6 @@ Sorry, there’s no english changelog.
 - Überarbeite Readme-Dateien (Danke an @zeilen).
 - `make` nutzt nun das korrekte Datum.
 - Hinweis nach erfolgreichem `make`-Befehl um "sudo" ergänzt (erforderlich für die Installation).
-- Das Disk Image ist nun signiert und von Apple beglaubigt (notarisiert).
 
 ## v2019.04.25
 
