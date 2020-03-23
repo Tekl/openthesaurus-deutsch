@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2020.03.16
+# for OpenThesaurus Deutsch v2020.03.22
 # by Wolfgang Reszel
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -16,7 +16,7 @@ DICT_SRC_PATH   = ThesaurusDeutsch.xml
 CSS_PATH        = ThesaurusDeutsch.css
 PMDOC_NAME      = ThesaurusDeutsch.pmdoc
 PLIST_PATH      = Info.plist
-DATE            = `date +"v%Y.%m.%d"`
+DATE            = `date +"%Y.%m.%d"`
 CURR_PATH       = `pwd`
 
 DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.6
@@ -69,32 +69,32 @@ createxml:
 build:
 	@$(DICT_BUILD_TOOL_BIN)/build_dict.sh $(DICT_BUILD_OPTS) "$(DICT_NAME)" $(DICT_SRC_PATH) $(CSS_PATH) $(PLIST_PATH)
 	@mkdir "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries"
-	@mkdir releases/2020.03.16/ | true
+	@mkdir releases/$(DATE)/ | true
 	@mv -f "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary" "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"
-	@cd objects/Dictionaries; zip -r "../../releases/2020.03.16/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
+	@cd objects/Dictionaries; zip -r "../../releases/$(DATE)/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
 	@echo "Done."
 	@echo "Use 'sudo make install' to install the dictionary or 'make dmg' to create the Disk Image."
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 dmg:
 	@echo "Creating Installer and Disk Image"
-	@mkdir releases/2020.03.16/ | true
+	@mkdir releases/$(DATE)/ | true
 	@/usr/local/bin/packagesbuild --identity "Developer ID Application: Wolfgang Reszel (3D3Y3WDMYF)" --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
-	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/2020.03.16/$(DICT_NAME_NSPC).dmg -setTextString version v2020.03.16
-	@open releases/2020.03.16/$(DICT_NAME_NSPC).dmg
+	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(DATE)/$(DICT_NAME_NSPC).dmg -setTextString version v$(DATE)
+	@open releases/$(DATE)/$(DICT_NAME_NSPC).dmg
 	@echo "- use 'make notarize' to notarize the disk image"
 	@echo "- use 'make nhistory' to check the notarization status"
 	@echo "- use 'make nstaple' to include the notarization ticket into the disk image"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 notarize:
-	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/2020.03.16/$(DICT_NAME_NSPC).dmg
+	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/$(DATE)/$(DICT_NAME_NSPC).dmg
 
 nhistory:
 	xcrun altool --notarization-history 0 -u "tekl@mac.com" -p "@keychain:AC_PASSWORD"
 
 nstaple:
-	xcrun stapler staple releases/2020.03.16/$(DICT_NAME_NSPC).dmg
+	xcrun stapler staple releases/$(DATE)/$(DICT_NAME_NSPC).dmg
 
 install:
 	@echo "Installing into $(DESTINATION_FOLDER)".
