@@ -524,7 +524,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>2020.03.22</string>
+				<string>2020.05.08</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -1082,13 +1082,13 @@
 										<key>LANGUAGE</key>
 										<string>English</string>
 										<key>VALUE</key>
-										<string>Installs v2020.03.22 of the Dictionary Plugin on you Mac.</string>
+										<string>Installs v2020.05.08 of the Dictionary Plugin on you Mac.</string>
 									</dict>
 									<dict>
 										<key>LANGUAGE</key>
 										<string>German</string>
 										<key>VALUE</key>
-										<string>Installiert v2020.03.22 des Lexikon-Plug-ins auf Ihren Mac.</string>
+										<string>Installiert v2020.05.08 des Lexikon-Plug-ins auf Ihren Mac.</string>
 									</dict>
 								</array>
 								<key>OPTIONS</key>

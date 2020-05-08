@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2020.03.22
+# for OpenThesaurus Deutsch v2020.05.08
 # by Wolfgang Reszel
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
