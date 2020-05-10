@@ -5,18 +5,16 @@ set homeDir to "${HOME}"
 set pluginName to "OpenThesaurus Deutsch.dictionary"
 
 try
-	tell application "System Events" to set dictPanelID to unix id of process "DictionaryPanel"
-	do shell script "kill -s QUIT " & dictPanelID
+	do shell script "pkill DictionaryPanel"
 end try
 try
-	tell application "System Events" to set dictPanelID to unix id of process "com.apple.DictionaryServiceHelp"
-	do shell script "kill -s QUIT " & dictPanelID
+	do shell script "pkill -KILL com.apple.DictionaryServiceHelp"
 end try
 
 try
     do shell script "rm -rf " & quoted form of (homeDir & "/Library/Dictionaries/" & pluginName)
 end try
-try 
+try
     do shell script "rm -rf " & quoted form of (homeDir & "/Library/Containers/com.apple.Dictionary/Data/Library/Dictionaries/" & pluginName)
 end try
 try

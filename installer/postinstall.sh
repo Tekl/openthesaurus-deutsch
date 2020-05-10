@@ -6,16 +6,13 @@ set BundlePath to installDir & "/Library/Dictionaries/OpenThesaurus Deutsch.dict
 if BundlePath begins with "//" then set BundlePath to characters 2 thru -1 of BundlePath as string
 
 try
-	tell application "System Events" to set dictPanelID to unix id of process "DictionaryPanel"
-	do shell script "kill -s QUIT " & dictPanelID
+	do shell script "pkill DictionaryPanel"
 end try
 try
-	tell application "System Events" to set dictPanelID to unix id of process "com.apple.DictionaryServiceHelp"
-	do shell script "kill -s QUIT " & dictPanelID
+	do shell script "pkill -KILL com.apple.DictionaryServiceHelp"
 end try
 try
 	tell application "System Events"
-
 		try
 			set locationToPlist to homeDir & "/Library/Preferences/com.apple.Dictionary.plist"
 			set propList to property list file locationToPlist
@@ -68,12 +65,10 @@ try
 		end try
 
 		try
-			set dictPanelID to unix id of process "DictionaryPanel"
-			do shell script "kill -s QUIT " & dictPanelID
+			do shell script "pkill DictionaryPanel"
 		end try
 		try
-			set dictPanelID to unix id of process "com.apple.DictionaryServiceHelp"
-			do shell script "kill -s QUIT " & dictPanelID
+			do shell script "pkill -KILL com.apple.DictionaryServiceHelp"
 		end try
 		set propList to property list file locationToPlist
 		set dicNode to property list item "DCSActiveDictionaries" of propList
