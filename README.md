@@ -34,12 +34,12 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 #### Manual Installation for Mac OS X 10.7 or newer
 
 1. Download the zipped dictionary plugin bundle: [OpenThesaurus_Deutsch.dictionaryfile.zip](https://github.com/Tekl/openthesaurus-deutsch/releases/latest/download/OpenThesaurus_Deutsch_dictionaryfile.zip)
-2. Launch the application “Dictionary.app” und execute the command “Open dictionary folder” from the File menu.<br>
-   ![Step 1](images/manual%20installation/dict-inst-1cursor.png)
-3. The Finder will open a window with the folder “Dictionaries”. Drag and drop the unzipped plugin bundle into that Finder window.<br>
-   ![Step 2](images/manual%20installation/dict-inst-2cursor.png)
-4. Quit and restart the application “Dictionary.app”, so it will detect the newly installed plugin. Open the Preferences of “Dictionary.app” (⌘+Comma), scroll to the entry “OpenThesaurus Deutsch” and click the checkbox.<br>
-   ![Step 3](images/manual%20installation/dict-inst-3cursor.png)
+2. Launch the application “Dictionary.app” und execute the command “Open dictionary folder” from the File menu.  
+![Step 1](images/manual%20installation/dict-inst-1cursor.png)
+3. The Finder will open a window with the folder “Dictionaries”. Drag and drop the unzipped plugin bundle into that Finder window.  
+![Step 2](images/manual%20installation/dict-inst-2cursor.png)
+4. Quit and restart the application “Dictionary.app”, so it will detect the newly installed plugin. Open the Preferences of “Dictionary.app” (⌘+Comma), scroll to the entry “OpenThesaurus Deutsch” and click the checkbox.  
+![Step 3](images/manual%20installation/dict-inst-3cursor.png)
 
 #### Manual Installation for Mac OS X 10.6
 
