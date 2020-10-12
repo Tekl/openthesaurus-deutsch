@@ -25,7 +25,7 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 
 ### Installation
 
-#### Installer
+#### Using the installer
 
 1. Download the plugin installer: [OpenThesaurus_Deutsch.dmg](https://github.com/Tekl/openthesaurus-deutsch/releases/latest/download/OpenThesaurus_Deutsch.dmg)
 2. Double-click on “OpenThesaurus Deutsch Installation” to start the installer.
