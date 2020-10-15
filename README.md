@@ -2,7 +2,7 @@
 
 ## OpenThesaurus Deutsch Dictionary Plugin
 
-_Version: 2020.05.08 - Mac OS X 10.6 to macOS 10.15_<br>
+_Version: 2020.05.08 - Mac OS X 10.6 to macOS 10.15_  
 _Copyright © 2020 Wolfgang Reszel and Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
@@ -13,9 +13,9 @@ The content of this plugin is based on the online thesaurus [www.openthesaurus.d
 
 The Python script to convert the OpenThesaurus dictionary into a dictionary plugin was developed by Wolfgang Reszel.
 
-**Updates and further informations:** [www.tekl.de](https://www.tekl.de)<br>
-**Support and source code:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)<br>
-**Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)<br>
+**Updates and further information:** [www.tekl.de](https://www.tekl.de)  
+**Support and source code:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)  
+**Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)  
 **Donation:** [PayPal](https://www.paypal.me/WolfgangReszel)
 
 ### Download
@@ -57,8 +57,11 @@ You can manually delete the plugin from the folder `/Library/Dictionaries` or `~
 ### Licenses
 
 - The content from the OpenThesaurus plugin is licensed under [CC-GNU LGPL](https://creativecommons.org/licenses/LGPL/2.1/)
-- This plugin and the build scripts are licensed under [GPLv3](https://www.gnu.org/licenses/gpl.html)<br>
-  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br>
-  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br>
-  You should have received a copy of the [GNU General Public License](LICENSE) along with this program. If not, see <https://www.gnu.org/licenses/>.
+- This plugin and the build scripts are licensed under [GPLv3](https://www.gnu.org/licenses/gpl.html)  
+  
+  This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.  
+  
+  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  
+  
+  You should have received a copy of the [GNU General Public License](LICENSE) along with this program. If not, see https://www.gnu.org/licenses/.
 
