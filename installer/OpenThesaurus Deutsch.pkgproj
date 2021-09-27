@@ -13,6 +13,12 @@
 					<key>STATE</key>
 					<true/>
 				</dict>
+				<dict>
+					<key>APPLICATION_ID</key>
+					<string>com.apple.DictionaryServiceHelper</string>
+					<key>STATE</key>
+					<true/>
+				</dict>
 			</array>
 			<key>MUST-CLOSE-APPLICATIONS</key>
 			<true/>
@@ -80,7 +86,7 @@
 									<array>
 										<dict>
 											<key>BUNDLE_CAN_DOWNGRADE</key>
-											<false/>
+											<true/>
 											<key>BUNDLE_POSTINSTALL_PATH</key>
 											<dict>
 												<key>PATH_TYPE</key>
@@ -94,7 +100,7 @@
 											<key>CHILDREN</key>
 											<array/>
 											<key>GID</key>
-											<integer>0</integer>
+											<integer>20</integer>
 											<key>PATH</key>
 											<string>../objects/Dictionaries/OpenThesaurus Deutsch.dictionary</string>
 											<key>PATH_TYPE</key>
@@ -104,7 +110,7 @@
 											<key>TYPE</key>
 											<integer>3</integer>
 											<key>UID</key>
-											<integer>0</integer>
+											<integer>501</integer>
 										</dict>
 									</array>
 									<key>EXPANDED</key>
@@ -473,6 +479,8 @@
 				</dict>
 				<key>PAYLOAD_TYPE</key>
 				<integer>0</integer>
+				<key>PRESERVE_EXTENDED_ATTRIBUTES</key>
+				<false/>
 				<key>SHOW_INVISIBLE</key>
 				<false/>
 				<key>SPLIT_FORKS</key>
@@ -524,7 +532,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>2020.05.08</string>
+				<string>2021.09.27</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -537,6 +545,12 @@
 				<dict>
 					<key>APPLICATION_ID</key>
 					<string>com.apple.Dictionary</string>
+					<key>STATE</key>
+					<true/>
+				</dict>
+				<dict>
+					<key>APPLICATION_ID</key>
+					<string>com.apple.DictionaryServiceHelper</string>
 					<key>STATE</key>
 					<true/>
 				</dict>
@@ -953,6 +967,8 @@
 				</dict>
 				<key>PAYLOAD_TYPE</key>
 				<integer>0</integer>
+				<key>PRESERVE_EXTENDED_ATTRIBUTES</key>
+				<false/>
 				<key>SHOW_INVISIBLE</key>
 				<false/>
 				<key>SPLIT_FORKS</key>
@@ -1082,13 +1098,13 @@
 										<key>LANGUAGE</key>
 										<string>English</string>
 										<key>VALUE</key>
-										<string>Installs v2020.05.08 of the Dictionary Plugin on you Mac.</string>
+										<string>Installs v2021.09.27 of the Dictionary Plugin on you Mac.</string>
 									</dict>
 									<dict>
 										<key>LANGUAGE</key>
 										<string>German</string>
 										<key>VALUE</key>
-										<string>Installiert v2020.05.08 des Lexikon-Plug-ins auf Ihren Mac.</string>
+										<string>Installiert v2021.09.27 des Lexikon-Plug-ins auf Ihren Mac.</string>
 									</dict>
 								</array>
 								<key>OPTIONS</key>
@@ -1305,7 +1321,7 @@
 						<key>VALUE</key>
 						<dict>
 							<key>PATH</key>
-							<string>README.rtfd</string>
+							<string>intro_en.rtfd</string>
 							<key>PATH_TYPE</key>
 							<integer>1</integer>
 						</dict>
@@ -1316,7 +1332,7 @@
 						<key>VALUE</key>
 						<dict>
 							<key>PATH</key>
-							<string>LIESMICH.rtfd</string>
+							<string>intro_de.rtfd</string>
 							<key>PATH_TYPE</key>
 							<integer>1</integer>
 						</dict>
@@ -1396,7 +1412,7 @@
 						<key>IC_REQUIREMENT_OS_DISTRIBUTION_TYPE</key>
 						<integer>0</integer>
 						<key>IC_REQUIREMENT_OS_MINIMUM_VERSION</key>
-						<integer>100600</integer>
+						<integer>101100</integer>
 					</dict>
 					<key>IC_REQUIREMENT_CHECK_TYPE</key>
 					<integer>1</integer>
@@ -1408,13 +1424,13 @@
 							<key>LANGUAGE</key>
 							<string>English</string>
 							<key>VALUE</key>
-							<string>This dictionary plugin requires OS X 10.6 (Leopard) or later!</string>
+							<string>This dictionary plugin requires OS X 10.11 (El Capitan) or later!</string>
 						</dict>
 						<dict>
 							<key>LANGUAGE</key>
 							<string>German</string>
 							<key>VALUE</key>
-							<string>Dieses Wörterbuch erfordert OS X 10.6 (Snow Leopard) oder höher!</string>
+							<string>Dieses Wörterbuch-Plug-in erfordert OS X 10.11 (El Capitan) oder höher!</string>
 						</dict>
 					</array>
 					<key>NAME</key>

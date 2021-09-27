@@ -11,6 +11,14 @@ end try
 try
 	do shell script "pkill -KILL com.apple.DictionaryServiceHelp"
 end try
+tell application id "com.apple.installer"
+	activate
+	if user locale of (get system info) begins with "de_" then
+		display dialog "Unter Umständen werden Sie gleich gefragt, ob das Installationsprogramm „System Events“ steuern darf. Dies ist erforderlich, um die Einstellungsdateien (Preferences) des Lexikons zu bearbeiten und das Plug-in automatisch zu aktivieren." & return & return & "Wenn Sie dem nicht trauen, können Sie auf „Nicht erlauben“ klicken. Dann müssen Sie das Plug-in selbst in den Einstellungen des Lexikon-Programms aktivieren." buttons {"Verstanden"} default button 1 giving up after 60 with icon caution
+	else
+		display dialog "Possibly the Installer asks for the permission to control “System Events”. This is necessary to edit the Preferences of the Dictionary App and automatically activate the Plugin." & return & return & "If you don’t trust this, you can click on “Don’t Allow”. Then you have to activate the Plugin in the Dictionary settings by yourself." buttons {"OK"} default button 1 giving up after 60 with icon caution
+	end if
+end tell
 try
 	tell application "System Events"
 		try
