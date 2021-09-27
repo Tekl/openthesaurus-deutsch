@@ -9,29 +9,31 @@
 	<key>CFBundleName</key>
 	<string>OpenThesaurus Deutsch</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2020.05.08</string>
+	<string>2021.09.27</string>
 	<key>CFBundleVersion</key>
-	<string>2020.05.08</string>
+	<string>2021.09.27</string>
 	<key>DCSDictionaryCopyright</key>
-	<string>Content: © 2020 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2020 Wolfgang Reszel, www.tekl.de</string>
+	<string>Content: © 2003-2021 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2021 Wolfgang Reszel, www.tekl.de&lt;br/&gt;&lt;br/&gt;&lt;a href="https://tekl.de/dictversion.php?version=2021.07.22-beta&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;</string>
+	<key>DCSDictionaryDefaultPrefs</key>
+	<dict>
+		<key>Font</key>
+		<string>0</string>
+		<key>ShowCopyright</key>
+		<string>1</string>
+	</dict>
 	<key>DCSDictionaryFrontMatterReferenceID</key>
 	<string>front_back_matter</string>
 	<key>DCSDictionaryManufacturerName</key>
 	<string>Wolfgang Reszel (www.tekl.de)</string>
-	<key>DCSDictionaryUseSystemAppearance</key>
-	<true/>
 	<key>DCSDictionaryPrefsHTML</key>
 	<string>OpenThesaurus_prefs.html</string>
+	<key>DCSDictionaryUseSystemAppearance</key>
+	<true/>
 	<key>DCSDictionaryXSL</key>
 	<string>OpenThesaurus.xsl</string>
-	<key>DCSDictionaryDefaultPrefs</key>
-	<dict>
-		<key>ShowCopyright</key>
-		<string>1</string>
-	</dict>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2020 Wolfgang Reszel, www.tekl.de / Daniel Naber, www.openthesaurus.de</string>
+	<string>© 2003-2021 Daniel Naber, www.openthesaurus.de / Wolfgang Reszel, www.tekl.de </string>
 </dict>
 </plist>

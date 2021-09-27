@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2020.05.08
+# for OpenThesaurus Deutsch v2021.09.27
 # by Wolfgang Reszel
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -19,8 +19,8 @@ PLIST_PATH      = Info.plist
 DATE            = `date +"%Y.%m.%d"`
 CURR_PATH       = `pwd`
 
-DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.6
-#DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.11
+#DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.6
+DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.11
 
 # Suppress adding supplementary key.
 # DICT_BUILD_OPTS		=	-s 0	# Suppress adding supplementary key.
@@ -61,26 +61,49 @@ CR = `echo "\r"`
 
 ###########################
 
-all: createxml build
+all: createxmlbeta build
+
+release: createxml build
+
+createxmlbeta:
+	@/usr/bin/python createxml.py beta
 
 createxml:
-	@/usr/bin/python createxml.py $(OS_VERSION) $(OS_VERSION2)
+	@/usr/bin/python createxml.py release
 
 build:
-	@$(DICT_BUILD_TOOL_BIN)/build_dict.sh $(DICT_BUILD_OPTS) "$(DICT_NAME)" $(DICT_SRC_PATH) $(CSS_PATH) $(PLIST_PATH)
+	@$(DICT_BUILD_TOOL_BIN)/build_dict.sh $(DICT_BUILD_OPTS) "$(DICT_NAME)" "$(DICT_SRC_PATH)" "$(CSS_PATH)" "$(PLIST_PATH)"
 	@mkdir "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries"
 	@mkdir releases/$(DATE)/ | true
+	@Rez -a images/icons/dictplug.rsrc -o "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary/Icon"$$'\r'
+	@SetFile -a C "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary"
+	@SetFile -a V "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary/Icon"$$'\r'
 	@mv -f "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary" "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"
 	@cd objects/Dictionaries; zip -r "../../releases/$(DATE)/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
 	@echo "Done."
-	@echo "Use 'sudo make install' to install the dictionary or 'make dmg' to create the Disk Image."
+	@echo "Use 'sudo make install' to install the dictionary or 'make dmg' or 'make releasedmg' to create the Disk Image."
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 dmg:
-	@echo "Creating Installer and Disk Image"
+	@echo "Creating Beta Installer ..."
 	@mkdir releases/$(DATE)/ | true
 	@/usr/local/bin/packagesbuild --identity "Developer ID Application: Wolfgang Reszel (3D3Y3WDMYF)" --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
+	@echo "Creating Beta Disk Image …"
+	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(DATE)/$(DICT_NAME_NSPC).dmg -setTextString version v$(DATE)-beta
+	@echo "Beta Installer and Beta Disk Image created."
+	@open releases/$(DATE)/$(DICT_NAME_NSPC).dmg
+	@echo "- use 'make notarize' to notarize the disk image"
+	@echo "- use 'make nhistory' to check the notarization status"
+	@echo "- use 'make nstaple' to include the notarization ticket into the disk image"
+	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
+
+releasedmg:
+	@echo "Creating Installer ..."
+	@mkdir releases/$(DATE)/ | true
+	@/usr/local/bin/packagesbuild --identity "Developer ID Application: Wolfgang Reszel (3D3Y3WDMYF)" --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
+	@echo "Creating Disk Image …"
 	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(DATE)/$(DICT_NAME_NSPC).dmg -setTextString version v$(DATE)
+	@echo "Installer and Disk Image created."
 	@open releases/$(DATE)/$(DICT_NAME_NSPC).dmg
 	@echo "- use 'make notarize' to notarize the disk image"
 	@echo "- use 'make nhistory' to check the notarization status"
@@ -105,7 +128,7 @@ install:
 	@rm -rf ~/Library/Caches/com.apple.DictionaryServices
 	@defaults write com.apple.Dictionary WebKitDeveloperExtras -bool true
 	@mkdir -p $(DESTINATION_FOLDER)
-	@ditto --noextattr --norsrc $(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"$(DICT_NAME)".dictionary $(DESTINATION_FOLDER)/"$(DICT_NAME)".dictionary
+	@ditto --noextattr $(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"$(DICT_NAME)".dictionary $(DESTINATION_FOLDER)/"$(DICT_NAME)".dictionary
 	@touch $(DESTINATION_FOLDER)
 	@echo "Done."
 	@open -a Dictionary

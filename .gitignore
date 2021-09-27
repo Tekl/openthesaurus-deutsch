@@ -3,3 +3,5 @@ ThesaurusDeutsch.xml
 **/.DS_Store
 objects
 .nova
+.mypy_cache
+testing.nosync
