@@ -2,7 +2,7 @@
 
 ## OpenThesaurus Deutsch Dictionary Plugin
 
-_Version: 2021.09.27 - Mac OS X 10.6 to macOS 10.15_  
+_Version: 2021.09.27 - OS X 10.11 to macOS 12_  
 _Copyright © 2021 Wolfgang Reszel and Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
@@ -31,7 +31,7 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 2. Double-click on “OpenThesaurus Deutsch Installation” to start the installer.
 3. Follow its instructions. To install the plugin for the current user and not for all users, click on “Change Install Location …” in the installer and select “Install for me only”.
 
-#### Manual Installation for Mac OS X 10.7 or newer
+#### Manual Installation
 
 1. Download the zipped dictionary plugin bundle: [OpenThesaurus_Deutsch.dictionaryfile.zip](https://github.com/Tekl/openthesaurus-deutsch/releases/latest/download/OpenThesaurus_Deutsch_dictionaryfile.zip)
 2. Launch the application “Dictionary.app” und execute the command “Open dictionary folder” from the File menu.  
@@ -40,13 +40,6 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 ![Step 2](images/manual%20installation/dict-inst-2cursor.png)
 4. Quit and restart the application “Dictionary.app”, so it will detect the newly installed plugin. Open the Preferences of “Dictionary.app” (⌘+Comma), scroll to the entry “OpenThesaurus Deutsch” and click the checkbox.  
 ![Step 3](images/manual%20installation/dict-inst-3cursor.png)
-
-#### Manual Installation for Mac OS X 10.6
-
-1. Download the zipped dictionary plugin bundle: [OpenThesaurus_Deutsch.dictionaryfile.zip](https://github.com/Tekl/openthesaurus-deutsch/releases)
-2. Drag and drop the unzipped plugin bundle into the folder `/Library/Dictionaries` (for all users) or `~/Library/Dictionaries` (for current user). Maybe you have to create the folder first.
-3. Quit and restart the application “Dictionary.app”, so it will detect the newly installed plugin. Open the Preferences of “Dictionary.app” (⌘+Comma), scroll to the entry “OpenThesaurus Deutsch” and click the checkbox.
-4. It could be necessary to re-login/restart or to quit the process “DictionaryPanel” in the Activity Monitor, so the plugin can be used in the dictionary panel (⌃⌘D).
 
 ### Uninstalling
 
