@@ -1,0 +1,423 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 PragmataProMonoLiga-Bold;\f1\fnil\fcharset0 PragmataProMonoLiga-Regular;\f2\fnil\fcharset0 PragmataProMonoLiga-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red108\green5\blue211;\red0\green0\blue255;\red77\green78\blue78;
+\red64\green128\blue0;\red0\green22\blue176;\red255\green0\blue0;\red68\green21\blue176;}
+{\*\expandedcolortbl;;\csgenericrgb\c42300\c1800\c82800;\csgenericrgb\c0\c0\c99819;\csgenericrgb\c30000\c30500\c30500;
+\csgenericrgb\c25000\c50000\c0;\csgenericrgb\c0\c8700\c69000;\csgenericrgb\c100000\c0\c0;\csgenericrgb\c26600\c8300\c69100;}
+\deftab480
+\pard\pardeftab480\slleading40\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 use
+\f1\b0  \cf2 AppleScript\cf0  \cf3 version\cf0  "2.4" 
+\f2\i \cf4 -- Yosemite (10.10) or later
+\f1\i0 \cf0 \
+
+\f0\b use
+\f1\b0  
+\f2\i \cf3 framework
+\f1\i0 \cf0  "Foundation"\
+
+\f0\b use
+\f1\b0  
+\f2\i \cf3 scripting additions
+\f1\i0 \cf0 \
+\
+
+\f2\i \cf4 -- pip3 install screenshot
+\f1\i0 \cf0 \
+\
+
+\f0\b property
+\f1\b0  \cf5 wordlist\cf0  : \{"Gesundheit", "Arzt", "Betteln", "Sachen", "Russland", "Urlaub", "Business", "Ma\'df", "etwas", "\'fcppig", "Telefon", "Glocken", "abbilden", "ID"\}\
+
+\f0\b property
+\f1\b0  \cf5 dictVersion\cf0  : "2021.07.28-beta"\
+\
+
+\f0\b on
+\f1\b0  
+\f0\b \cf3 run
+\f1\b0 \cf0 \
+	
+\f0\b tell
+\f1\b0  
+\f2\i \cf3 application
+\f1\i0 \cf0  "System Events"\
+		
+\f0\b set
+\f1\b0  \cf5 destinationFolder\cf0  
+\f0\b to
+\f1\b0  \cf2 POSIX path\cf0  
+\f0\b of
+\f1\b0  \cf2 container\cf0  
+\f0\b of
+\f1\b0  (
+\f0\b \cf6 path to
+\f1\b0 \cf0  
+\f0\b me
+\f1\b0 )\
+		
+\f0\b set
+\f1\b0  \cf5 infoPlist\cf0  
+\f0\b to
+\f1\b0  \cf5 destinationFolder\cf0  & "/Info.plist"\
+		
+\f0\b tell
+\f1\b0  
+\f2\i \cf3 property list file
+\f1\i0 \cf0  \cf5 infoPlist\cf0 \
+			
+\f0\b set
+\f1\b0  \cf5 dictVersion\cf0  
+\f0\b to
+\f1\b0  \cf2 value\cf0  
+\f0\b of
+\f1\b0  
+\f2\i \cf3 property list item
+\f1\i0 \cf0  "CFBundleVersion"\
+		
+\f0\b end
+\f1\b0  
+\f0\b tell
+\f1\b0 \
+	
+\f0\b end
+\f1\b0  
+\f0\b tell
+\f1\b0 \
+	\
+	
+\f0\b set
+\f1\b0  \cf5 jsCmd\cf0  
+\f0\b to
+\f1\b0  "ObjC.import('CoreGraphics');\
+	ObjC.import('Quartz');\
+	\
+	nil      = $();\
+	$.unwrap = ObjC.deepUnwrap.bind(ObjC),\
+	$.bind   = ObjC.bindFunction.bind($);\
+	\
+	$.bind('CFMakeCollectable', [ 'id', [ 'void *' ] ]);\
+	Ref.prototype._nsObject = function () \{\
+		return $.unwrap($.CFMakeCollectable(this));\
+	\}\
+	\
+	const kCGWindows = $.CGWindowListCopyWindowInfo($.kCGWindowListOptionAll, $.kCGWindowNull)._nsObject();\
+	\
+	const Windows = \{ \
+		visible      : kCGWindows.filter( w => w.kCGWindowIsOnscreen ),\
+		applications : kCGWindows.filter( w => !w.kCGWindowLayer )\
+	\};\
+	\
+	Windows.visible;"\
+	
+\f0\b set
+\f1\b0  \cf5 theWindows\cf0  
+\f0\b to
+\f1\b0  
+\f0\b \cf6 run script
+\f1\b0 \cf0  \cf5 jsCmd\cf0  \cf6 in\cf0  "JavaScript"\
+	
+\f0\b repeat
+\f1\b0  
+\f0\b with
+\f1\b0  \cf5 theWindow\cf0  
+\f0\b in
+\f1\b0  \cf5 theWindows\cf0 \
+		
+\f0\b if
+\f1\b0  \cf5 kCGWindowOwnerName\cf0  
+\f0\b of
+\f1\b0  \cf5 theWindow\cf0  
+\f0\b is
+\f1\b0  "Dictionary" 
+\f0\b or
+\f1\b0  \cf5 kCGWindowOwnerName\cf0  
+\f0\b of
+\f1\b0  \cf5 theWindow\cf0  
+\f0\b is
+\f1\b0  "Lexikon" 
+\f0\b then
+\f1\b0 \
+			
+\f0\b set
+\f1\b0  \cf5 winID\cf0  
+\f0\b to
+\f1\b0  \cf5 kCGWindowNumber\cf0  
+\f0\b of
+\f1\b0  \cf5 theWindow\cf0  
+\f0\b as
+\f1\b0  
+\f2\i \cf3 string
+\f1\i0 \cf0 \
+			
+\f0\b exit
+\f1\b0  
+\f0\b repeat
+\f1\b0 \
+		
+\f0\b end
+\f1\b0  
+\f0\b if
+\f1\b0 \
+	
+\f0\b end
+\f1\b0  
+\f0\b repeat
+\f1\b0 \
+	\
+	
+\f0\b repeat
+\f1\b0  
+\f0\b with
+\f1\b0  \cf5 theWord\cf0  
+\f0\b in
+\f1\b0  \cf5 wordlist\cf0 \
+		
+\f0\b tell
+\f1\b0  
+\f2\i \cf3 application
+\f1\i0 \cf0  "Dictionary" 
+\f0\b to
+\f1\b0  
+\f0\b \cf3 activate
+\f1\b0 \cf0 \
+		
+\f0\b \cf3 delay
+\f1\b0 \cf0  0.1\
+		
+\f0\b tell
+\f1\b0  
+\f2\i \cf3 application
+\f1\i0 \cf0  "System Events" 
+\f0\b to
+\f1\b0  
+\f0\b \cf3 keystroke
+\f1\b0 \cf0  "1" \cf3 using\cf0  \cf2 command down\cf0 \
+		
+\f2\i \cf4 (*		tell application "System Events"\
+			keystroke "f" using \{command down, option down\}\
+			delay 0.2\
+			keystroke theWord & return\
+		end tell*)
+\f1\i0 \cf0 \
+		
+\f0\b \cf6 open location
+\f1\b0 \cf0  "dict://" & \cf5 theWord\cf0 \
+		
+\f0\b \cf3 delay
+\f1\b0 \cf0  0.4\
+		
+\f2\i \cf4 --do shell script "screencapture -m -o -R" & x & "," & y & "," & w & "," & h & " " & quoted form of (destinationFolder & "/testing.nosync/Lexikon-Test_" & theWord & "_" & dictVersion & ".png")
+\f1\i0 \cf0 \
+		
+\f0\b try
+\f1\b0 \
+			
+\f0\b \cf6 do shell script
+\f1\b0 \cf0  "mkdir " & \cf2 quoted form\cf0  
+\f0\b of
+\f1\b0  (\cf5 destinationFolder\cf0  & "/testing.nosync")\
+		
+\f0\b end
+\f1\b0  
+\f0\b try
+\f1\b0 \
+		
+\f0\b set
+\f1\b0  \cf5 shellCmd\cf0  
+\f0\b to
+\f1\b0  "screencapture -l " & \cf5 winID\cf0  & " " & \cf2 quoted form\cf0  
+\f0\b of
+\f1\b0  (\cf5 destinationFolder\cf0  & "/testing.nosync/Lexikon-Test_" & \cf5 theWord\cf0  & "_" & \cf5 dictVersion\cf0  & ".png")\
+		
+\f0\b \cf6 do shell script
+\f1\b0 \cf0  \cf5 shellCmd\cf0 \
+		
+\f0\b \cf3 delay
+\f1\b0 \cf0  0.3\
+	
+\f0\b end
+\f1\b0  
+\f0\b repeat
+\f1\b0 \
+
+\f0\b end
+\f1\b0  
+\f0\b \cf3 run
+\f1\b0 \cf0 \
+\
+
+\f0\b on
+\f1\b0  \cf7 urlEncode\cf0 (\cf5 subjectStr\cf0 )\
+	
+\f0\b set
+\f1\b0  \cf5 resultStr\cf0  
+\f0\b to
+\f1\b0  ""\
+	
+\f0\b repeat
+\f1\b0  
+\f0\b with
+\f1\b0  \cf5 eachChar\cf0  
+\f0\b in
+\f1\b0  
+\f2\i \cf3 characters
+\f1\i0 \cf0  
+\f0\b of
+\f1\b0  \cf5 subjectStr\cf0 \
+		
+\f0\b set
+\f1\b0  \cf5 useChar\cf0  
+\f0\b to
+\f1\b0  \cf5 eachChar\cf0 \
+		
+\f0\b set
+\f1\b0  \cf5 eachCharNum\cf0  
+\f0\b to
+\f1\b0  
+\f0\b \cf6 ASCII number
+\f1\b0 \cf0  
+\f0\b of
+\f1\b0  \cf5 eachChar\cf0 \
+		
+\f0\b if
+\f1\b0  \cf5 eachCharNum\cf0  = 32 
+\f0\b then
+\f1\b0 \
+			
+\f0\b set
+\f1\b0  \cf5 useChar\cf0  
+\f0\b to
+\f1\b0  "+"\
+		
+\f0\b else
+\f1\b0  
+\f0\b if
+\f1\b0  (\cf5 eachCharNum\cf0  \uc0\u8800  42) 
+\f0\b and
+\f1\b0  (\cf5 eachCharNum\cf0  \uc0\u8800  95) 
+\f0\b and
+\f1\b0  (\cf5 eachCharNum\cf0  < 45 
+\f0\b or
+\f1\b0  \cf5 eachCharNum\cf0  > 46) 
+\f0\b and
+\f1\b0  (\cf5 eachCharNum\cf0  < 48 
+\f0\b or
+\f1\b0  \cf5 eachCharNum\cf0  > 57) 
+\f0\b and
+\f1\b0  (\cf5 eachCharNum\cf0  < 65 
+\f0\b or
+\f1\b0  \cf5 eachCharNum\cf0  > 90) 
+\f0\b and
+\f1\b0  (\cf5 eachCharNum\cf0  < 97 
+\f0\b or
+\f1\b0  \cf5 eachCharNum\cf0  > 122) 
+\f0\b then
+\f1\b0 \
+			
+\f0\b set
+\f1\b0  \cf5 firstDig\cf0  
+\f0\b to
+\f1\b0  
+\f0\b \cf6 round
+\f1\b0 \cf0  (\cf5 eachCharNum\cf0  / 16) \cf6 rounding\cf0  \cf8 down\cf0 \
+			
+\f0\b set
+\f1\b0  \cf5 secondDig\cf0  
+\f0\b to
+\f1\b0  \cf5 eachCharNum\cf0  
+\f0\b mod
+\f1\b0  16\
+			
+\f0\b if
+\f1\b0  \cf5 firstDig\cf0  > 9 
+\f0\b then
+\f1\b0 \
+				
+\f0\b set
+\f1\b0  \cf5 aNum\cf0  
+\f0\b to
+\f1\b0  \cf5 firstDig\cf0  + 55\
+				
+\f0\b set
+\f1\b0  \cf5 firstDig\cf0  
+\f0\b to
+\f1\b0  
+\f0\b \cf6 ASCII character
+\f1\b0 \cf0  \cf5 aNum\cf0 \
+			
+\f0\b end
+\f1\b0  
+\f0\b if
+\f1\b0 \
+			
+\f0\b if
+\f1\b0  \cf5 secondDig\cf0  > 9 
+\f0\b then
+\f1\b0 \
+				
+\f0\b set
+\f1\b0  \cf5 aNum\cf0  
+\f0\b to
+\f1\b0  \cf5 secondDig\cf0  + 55\
+				
+\f0\b set
+\f1\b0  \cf5 secondDig\cf0  
+\f0\b to
+\f1\b0  
+\f0\b \cf6 ASCII character
+\f1\b0 \cf0  \cf5 aNum\cf0 \
+			
+\f0\b end
+\f1\b0  
+\f0\b if
+\f1\b0 \
+			
+\f0\b set
+\f1\b0  \cf5 numHex\cf0  
+\f0\b to
+\f1\b0  ("%" & (\cf5 firstDig\cf0  
+\f0\b as
+\f1\b0  
+\f2\i \cf3 text
+\f1\i0 \cf0 ) & (\cf5 secondDig\cf0  
+\f0\b as
+\f1\b0  
+\f2\i \cf3 text
+\f1\i0 \cf0 )) 
+\f0\b as
+\f1\b0  
+\f2\i \cf3 text
+\f1\i0 \cf0 \
+			
+\f0\b set
+\f1\b0  \cf5 useChar\cf0  
+\f0\b to
+\f1\b0  \cf5 numHex\cf0 \
+		
+\f0\b end
+\f1\b0  
+\f0\b if
+\f1\b0 \
+		
+\f0\b set
+\f1\b0  \cf5 resultStr\cf0  
+\f0\b to
+\f1\b0  \cf5 resultStr\cf0  & \cf5 useChar\cf0  
+\f0\b as
+\f1\b0  
+\f2\i \cf3 text
+\f1\i0 \cf0 \
+	
+\f0\b end
+\f1\b0  
+\f0\b repeat
+\f1\b0 \
+	
+\f0\b return
+\f1\b0  \cf5 resultStr\cf0 \
+
+\f0\b end
+\f1\b0  \cf7 urlEncode}
