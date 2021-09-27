@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <style>
+        h4 {
+            margin-bottom: 0.25em;
+            margin-top: 1em;
+        }
+        
+        h4+p {
+            margin: 0.5em 0;
+        }
+        
+        h4 span {
+            font-weight: normal;
+        }
+        
+        p span {
+            white-space: nowrap;
+            display: inline-block;
+            margin-right: 0.5em;
+        }
+        
+        .inline sup {
+            position: absolute;
+            margin-top: -0.3em;
+            font-size: 70%;
+        }
+        
+        p.inline span {
+            width: 13em;
+            margin-right: 0;
+        }
+        
+        .footnotes {
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="copyright"></div>
+    <hr />
+    <div class="query">
+        <input type="hidden" name="version" value="1" />
+    </div>
+    <!-- FOOTER -->
+    <div class="query">
+        <h4>Footer with copyright</h4>
+        <p>
+            <span><input type="radio" name="ShowCopyright" value="1" id="cpy_shw" /> <label for="cpy_shw">show</label></span>
+            <span><input type="radio" name="ShowCopyright" value="0" id="cpy_hid" /> <label for="cpy_hid">hide</label></span>
+        </p>
+    </div>
+    <!-- /FOOTER -->
+    <!-- FONT -->
+    <div class="query">
+        <h4>Font <span>(Close window to apply selection)</span></h4>
+        <p class="inline">
+            <span><input type="radio" name="Font" value="0" id="System" /> <label for="System">System</label></span>
+            <span><input type="radio" name="Font" value="1" id="AmericanTypewriter" /> <label for="AmericanTypewriter" style="font-family: 'American Typewriter'">American Typewriter</label></span>
+            <span><input type="radio" name="Font" value="2" id="ArialNarrow" /> <label for="ArialNarrow" style="font-family: 'Arial Narrow'">Arial Narrow</label></span>
+            <span><input type="radio" name="Font" value="3" id="Avenir" /> <label for="Avenir" style="font-family: 'Avenir'">Avenir</label></span>
+            <span><input type="radio" name="Font" value="4" id="AvenirNextCondensed" /> <label for="AvenirNextCondensed" style="font-family: 'Avenir Next Condensed'">Avenir Next Condensed</label></span>
+            <span><input type="radio" name="Font" value="5" id="Baskerville" /> <label for="Baskerville" style="font-family: 'Baskerville'">Baskerville</label></span>
+            <span><input type="radio" name="Font" value="6" id="Charter" /> <label for="Charter" style="font-family: 'Charter'">Charter</label></span>
+            <span><input type="radio" name="Font" value="7" id="Cochin" /> <label for="Cochin" style="font-family: 'Cochin'">Cochin</label></span>
+            <span><input type="radio" name="Font" value="8" id="Geneva" /> <label for="Geneva" style="font-family: 'Geneva'">Geneva</label></span>
+            <span><input type="radio" name="Font" value="9" id="Georgia" /> <label for="Georgia" style="font-family: 'Georgia'">Georgia</label></span>
+           <span><input type="radio" name="Font" value="10" id="GraphikCompact" /> <label for="GraphikCompact" style="font-family: 'Graphik Compact'">Graphik Compact</label><sup title="Downloadable via Font Book">1</sup></span>
+            <span><input type="radio" name="Font" value="11" id="HelveticaNeue" /> <label for="HelveticaNeue" style="font-family: 'Helvetica Neue'">Helvetica Neue</label></span>
+            <span><input type="radio" name="Font" value="12" id="HoeflerText" /> <label for="HoeflerText" style="font-family: 'Hoefler Text'">Hoefler Text</label></span>
+            <span><input type="radio" name="Font" value="13" id="Kefa" /> <label for="Kefa" style="font-family: 'Kefa'">Kefa</label></span>
+            <span><input type="radio" name="Font" value="14" id="LucidaGrande" /> <label for="LucidaGrande" style="font-family: 'Lucida Grande'">Lucida Grande</label></span>
+            <span><input type="radio" name="Font" value="15" id="Menlo" /> <label for="Menlo" style="font-family: 'Menlo'">Menlo</label></span>
+            <span><input type="radio" name="Font" value="16" id="Monaco" /> <label for="Monaco" style="font-family: 'Monaco'">Monaco</label></span>
+            <span><input type="radio" name="Font" value="17" id="Optima" /> <label for="Optima" style="font-family: 'Optima'">Optima</label></span>
+            <span><input type="radio" name="Font" value="18" id="Palatino" /> <label for="Palatino" style="font-family: 'Palatino'">Palatino</label></span>
+            <span><input type="radio" name="Font" value="19" id="PragmataPro" /> <label for="PragmataPro" style="font-family: 'PragmataPro'">PragmataPro<sup title="Commercial Font from www.fsd.it">3</sup></label></span>
+            <span><input type="radio" name="Font" value="20" id="PTSans" /> <label for="PTSans" style="font-family: 'PT Sans'">PT Sans</label></span>
+            <span><input type="radio" name="Font" value="21" id="SFCompact" /> <label for="SFCompact" style="font-family: 'SF Compact'">SF Compact</label><sup title="Part of Apple’s SF Symbols App">2</sup></span>
+            <span><input type="radio" name="Font" value="22" id="SFCompactRounded" /> <label for="SFCompactRounded" style="font-family: 'SF Compact Rounded'">SF Compact Rounded</label><sup title="Part of Apple’s SF Symbols App">2</sup></span>
+            <span><input type="radio" name="Font" value="23" id="SFPro" /> <label for="SFPro" style="font-family: 'SF Pro'">SF Pro</label><sup title="Part of Apple’s SF Symbols App">2</sup></span>
+            <span><input type="radio" name="Font" value="24" id="SFProRounded" /> <label for="SFProRounded" style="font-family: 'SF Pro Rounded'">SF Pro Rounded</label><sup title="Part of Apple’s SF Symbols App">2</sup></span>
+            <span><input type="radio" name="Font" value="25" id="Sys" /> <label for="Sys" style="font-family: 'Sys'">Sys</label><sup title="Commercial Font from www.fsd.it">3</sup></span>
+            <span><input type="radio" name="Font" value="26" id="Tahoma" /> <label for="Tahoma" style="font-family: 'Tahoma'">Tahoma</label></span>
+            <span><input type="radio" name="Font" value="27" id="TimesNewRoman" /> <label for="TimesNewRoman" style="font-family: 'Times New Roman'">Times New Roman</label></span>
+            <span><input type="radio" name="Font" value="28" id="Verdana" /> <label for="Verdana" style="font-family: 'Verdana'">Verdana</label></span>
+        </p>
+        <hr />
+        <p class="footnotes">
+            <span id="fn1"><sup>1</sup> Downloadable via Font Book</span> &nbsp;
+            <span id="fn2"><sup>2</sup> Part of Apple’s SF Symbols App</span> &nbsp;
+            <span id="fn3"><sup>3</sup> Commercial Font from www.fsd.it</span> &nbsp;
+        </p>
+    </div>
+    <!-- /FONT -->
+</body>
+
+</html>
