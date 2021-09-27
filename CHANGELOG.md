@@ -15,7 +15,7 @@ Sorry, there’s no english changelog.
 
 - Berücksichtigt deutlich mehr Wortformen bei Suchbegriffen (auf Basis des [Morphologie-Lexikons](http://www.danielnaber.de/morphologie/) von Daniel Naber, Stand 25.6.2021, LT v5.4)
 - Das Plug-in liegt nun in einem moderneren Format vor, das allerdings nur zu OS X 10.11 und höher kompatibel ist. Das verhindert auf aktuellen Systemen willkürliche Abstürze bei einigen Programmen wie PDF Expert.
-- Datenbestand vom 09.08.2021 mit 156834 Einträgen.
+- Datenbestand vom 26.09.2021 mit 156834 Einträgen.
 
 ## v2020.05.08
 
