@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2021.09.27
+# for OpenThesaurus Deutsch v2021.09.29
 # by Wolfgang Reszel
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################

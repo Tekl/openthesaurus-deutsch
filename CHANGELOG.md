@@ -2,6 +2,16 @@
 
 Sorry, there’s no english changelog.
 
+## v2021.09.29
+
+#### Fehler behoben (Fixed)
+
+- Die Update-Funktion in den Einstellungen lieferte die falsche Versionsnummer und meinte, die aktuelle Version sei bereits veraltet. (Danke maelcum [#2](https://github.com/Tekl/beolingus-deutsch-englisch/issues/2))
+
+### Geändert (Changed)
+
+- Datenbestand vom 28.09.2021 mit 156873  Einträgen.
+
 ## v2021.09.27
 
 ### Hinzugefügt (Added)
