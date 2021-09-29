@@ -427,10 +427,10 @@ for id in lengths:
 
 destfile.write(u"""
 <d:entry id="front_back_matter" d:title="Vorderer/hinterer Teil">
-    <h1>OpenThesaurus Deutsch</h1>
+    <h1><b>OpenThesaurus Deutsch</b></h1>
     <div><small><b>Version: %s</b></small></div>
     <p>
-        Dieser Thesaurus basiert auf dem Online-Thesaurus<br/>
+        Dieser Thesaurus basiert auf dem Online-Thesaurus:<br/>
         <a href="https://www.openthesaurus.de">www.openthesaurus.de</a> von Daniel Naber. (Stand: %s, %s Einträge)
     </p>
     <p>
@@ -500,6 +500,7 @@ plist = plistFile.read()
 plist = re.sub(r"(?u)(<key>CFBundleVersion</key>\s+<string>)[^<]+(</string>)", "\\g<1>" + bundleVersion + "\\2", plist)
 plist = re.sub(r"(?u)(<key>CFBundleShortVersionString</key>\s+<string>)[^<]+(</string>)", "\\g<1>" + bundleVersion + "\\2", plist)
 plist = re.sub(r"© \d\d\d\d ", u"© " + datetime.datetime.today().strftime("%Y") + u" ", plist)
+plist = re.sub(r"version=20\d+.\d+.\d+(-beta)?", "version=" + bundleVersion, plist)
 plistFile.close()
 plistFile = codecs.open('Info.plist', 'w', 'UTF-8')
 plistFile.write(plist)
