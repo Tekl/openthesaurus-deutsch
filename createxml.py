@@ -37,7 +37,7 @@ else:
     versionSuffx = ""
 
 print("Lexikon-Plug-in (OpenThesaurus Deutsch) auf Basis von OpenThesaurus.de")
-print("CreateXML v2.0.2 von Wolfgang Reszel, 2021-08-26")
+print("CreateXML v2.0.3 von Wolfgang Reszel, 2021-10-05")
 print
 morphology = {}
 for file in ["morphology-cache.txt", "../Morphologie_Deutsch/morphology-cache.txt"]:
