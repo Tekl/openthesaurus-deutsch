@@ -2,6 +2,7 @@
 osascript <<EOF
 set installDir to "${2}"
 set homeDir to "${HOME}"
+set bundleID to "de.tekl.dictionary.openThesaurusDeutsch"
 set BundlePath to installDir & "/Library/Dictionaries/OpenThesaurus Deutsch.dictionary"
 if BundlePath begins with "//" then set BundlePath to characters 2 thru -1 of BundlePath as string
 
@@ -11,6 +12,7 @@ end try
 try
 	do shell script "pkill -KILL com.apple.DictionaryServiceHelp"
 end try
+
 tell application id "com.apple.installer"
 	activate
 	if user locale of (get system info) begins with "de_" then
@@ -19,6 +21,7 @@ tell application id "com.apple.installer"
 		display dialog "Possibly the Installer asks for the permission to control “System Events”. This is necessary to edit the Preferences of the Dictionary App and automatically activate the Plugin." & return & return & "If you don’t trust this, you can click on “Don’t Allow”. Then you have to activate the Plugin in the Dictionary settings by yourself." buttons {"OK"} default button 1 giving up after 60 with icon caution
 	end if
 end tell
+
 try
 	tell application "System Events"
 		try
@@ -71,27 +74,40 @@ try
 			set locationToPlist to homeDir & "/Library/Containers/com.apple.Dictionary/Data/Library/Preferences/com.apple.DictionaryServices.plist"
 			set propList to property list file locationToPlist
 		end try
-
-		try
-			do shell script "pkill DictionaryPanel"
-		end try
-		try
-			do shell script "pkill -KILL com.apple.DictionaryServiceHelp"
-		end try
+		
 		set propList to property list file locationToPlist
-		set dicNode to property list item "DCSActiveDictionaries" of propList
-		set pathFound to false
-		repeat with i from 1 to (count of dicNode)
-			set targetItem2 to item i of dicNode
-
-			if value of targetItem2 contains BundlePath then
-				set pathFound to true
-				exit repeat
+		
+		-- activate plugin
+		try
+			set dicNode to property list item "DCSActiveDictionaries" of propList
+			set pathFound to false
+			repeat with i from 1 to (count of dicNode)
+				set targetItem2 to item i of dicNode
+				
+				if value of targetItem2 contains BundlePath then
+					set pathFound to true
+					exit repeat
+				end if
+			end repeat
+			if pathFound is false then
+				make new property list item at end of dicNode with properties {kind:string, value:BundlePath}
 			end if
-		end repeat
-
-		if pathFound is false then
-			make new property list item at end of dicNode with properties {kind:string, value:BundlePath}
+		end try
+		
+		-- set missing preferences to avoid blank page issues
+		if not (exists property list item "DCSDictionaryPrefs" of propList) then
+			make new property list item at end of propList with properties {kind:record, name:"DCSDictionaryPrefs"}
+		end if
+		try
+			set dicPrefs to property list item bundleID of property list item "DCSDictionaryPrefs" of propList
+		on error
+			set dicPrefs to make new property list item at end of property list item "DCSDictionaryPrefs" of propList with properties {kind:record, name:bundleID}
+		end try
+		if not (exists property list item "Font" of dicPrefs) then
+			make new property list item at end of dicPrefs with properties {kind:string, name:"Font", value:"0"}
+		end if
+		if not (exists property list item "ShowCopyright" of dicPrefs) then
+			make new property list item at end of dicPrefs with properties {kind:string, name:"ShowCopyright", value:"1"}
 		end if
 	end tell
 end try
