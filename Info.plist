@@ -9,11 +9,11 @@
 	<key>CFBundleName</key>
 	<string>OpenThesaurus Deutsch</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2021.09.29</string>
+	<string>2021.10.06</string>
 	<key>CFBundleVersion</key>
-	<string>2021.09.29</string>
+	<string>2021.10.06</string>
 	<key>DCSDictionaryCopyright</key>
-	<string>Content: © 2003-2021 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2021 Wolfgang Reszel, www.tekl.de&lt;br/&gt;&lt;br/&gt;&lt;a href="https://tekl.de/dictversion.php?version=2021.09.29&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;</string>
+	<string>&lt;p&gt;&lt;b&gt;OpenThesaurus Deutsch&lt;/b&gt; v2021.10.06&lt;/p&gt;&lt;p&gt;Content: © 2003-2021 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2021 Wolfgang Reszel, www.tekl.de&lt;/p&gt;&lt;p&gt;&lt;a href="https://tekl.de/dictversion.php?version=2021.10.06&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</string>
 	<key>DCSDictionaryDefaultPrefs</key>
 	<dict>
 		<key>Font</key>
@@ -34,6 +34,6 @@
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2003-2021 Daniel Naber, www.openthesaurus.de / Wolfgang Reszel, www.tekl.de </string>
+	<string>© P21 Daniel Naber, www.openthesaurus.de / Wolfgang Reszel, www.tekl.de </string>
 </dict>
 </plist>
