@@ -7,6 +7,9 @@ Sorry, there’s no english changelog.
 ### Fehler behoben (Fixed)
 
 - Die Installation funktioniert nun wieder unter OS X 10.11 und bricht nicht mehr mit dem Fehler „Ungültige Signatur“ ab.
+
+### Geändert (Changed)
+
 - Datenbestand vom 16.10.2021 mit 157326 Einträgen.
 
 ## v2021.10.06
