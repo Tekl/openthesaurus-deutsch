@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2021.10.06
+# for OpenThesaurus Deutsch v2021.10.17
 # by Wolfgang Reszel
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -14,7 +14,6 @@ DICT_NAME       = OpenThesaurus Deutsch
 DICT_NAME_NSPC  = OpenThesaurus_Deutsch
 DICT_SRC_PATH   = ThesaurusDeutsch.xml
 CSS_PATH        = ThesaurusDeutsch.css
-PMDOC_NAME      = ThesaurusDeutsch.pmdoc
 PLIST_PATH      = Info.plist
 DATE            = `date +"%Y.%m.%d"`
 CURR_PATH       = `pwd`
@@ -31,7 +30,6 @@ DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.11
 # You need to set it when you invoke the script directly.
 
 DICT_BUILD_TOOL_DIR	    = /Developer/Auxiliary\ Tools/Dictionary\ Development\ Kit
-#PACKAGE_MAKER_DIR       = /Developer/Auxiliary\ Tools/PackageMaker.app
 ifeq ("$(wildcard $(DICT_BUILD_TOOL_DIR))","")
 DICT_BUILD_TOOL_DIR	    = /Developer/Utilities/Dictionary\ Development\ Kit
 endif
@@ -87,7 +85,9 @@ build:
 dmg:
 	@echo "Creating Beta Installer ..."
 	@mkdir releases/$(DATE)/ | true
-	@/usr/local/bin/packagesbuild --identity "Developer ID Application: Wolfgang Reszel (3D3Y3WDMYF)" --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
+	@/usr/local/bin/packagesbuild --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
+	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
+	@rm "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg"
 	@echo "Creating Beta Disk Image …"
 	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(DATE)/$(DICT_NAME_NSPC).dmg -setTextString version v$(DATE)-beta
 	@echo "Beta Installer and Beta Disk Image created."
@@ -100,7 +100,9 @@ dmg:
 releasedmg:
 	@echo "Creating Installer ..."
 	@mkdir releases/$(DATE)/ | true
-	@/usr/local/bin/packagesbuild --identity "Developer ID Application: Wolfgang Reszel (3D3Y3WDMYF)" --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
+	@/usr/local/bin/packagesbuild --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
+	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
+	@rm "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg"
 	@echo "Creating Disk Image …"
 	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(DATE)/$(DICT_NAME_NSPC).dmg -setTextString version v$(DATE)
 	@echo "Installer and Disk Image created."
