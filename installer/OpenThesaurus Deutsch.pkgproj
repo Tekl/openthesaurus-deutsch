@@ -532,7 +532,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>2021.10.06</string>
+				<string>2021.10.17</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -1098,13 +1098,13 @@
 										<key>LANGUAGE</key>
 										<string>English</string>
 										<key>VALUE</key>
-										<string>Installs v2021.10.06 of the Dictionary Plugin on you Mac.</string>
+										<string>Installs v2021.10.17 of the Dictionary Plugin on you Mac.</string>
 									</dict>
 									<dict>
 										<key>LANGUAGE</key>
 										<string>German</string>
 										<key>VALUE</key>
-										<string>Installiert v2021.10.06 des Lexikon-Plug-ins auf Ihren Mac.</string>
+										<string>Installiert v2021.10.17 des Lexikon-Plug-ins auf Ihren Mac.</string>
 									</dict>
 								</array>
 								<key>OPTIONS</key>
@@ -1464,13 +1464,6 @@
 				<key>PATH_TYPE</key>
 				<integer>1</integer>
 			</dict>
-			<key>CERTIFICATE</key>
-			<dict>
-				<key>NAME</key>
-				<string>Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)</string>
-				<key>PATH</key>
-				<string>/Users/Wolfgang/Library/Keychains/login.keychain</string>
-			</dict>
 			<key>EXCLUDED_FILES</key>
 			<array>
 				<dict>
@@ -1640,7 +1633,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>OpenThesaurus Deutsch Installation</string>
+			<string>OpenThesaurus Deutsch Temp</string>
 			<key>PAYLOAD_ONLY</key>
 			<false/>
 			<key>TREAT_MISSING_PRESENTATION_DOCUMENTS_AS_WARNING</key>
