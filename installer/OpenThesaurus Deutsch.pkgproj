@@ -13,12 +13,6 @@
 					<key>STATE</key>
 					<true/>
 				</dict>
-				<dict>
-					<key>APPLICATION_ID</key>
-					<string>com.apple.DictionaryServiceHelper</string>
-					<key>STATE</key>
-					<true/>
-				</dict>
 			</array>
 			<key>MUST-CLOSE-APPLICATIONS</key>
 			<true/>
@@ -532,7 +526,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>2021.10.17</string>
+				<string>2021.11.05</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -1098,13 +1092,13 @@
 										<key>LANGUAGE</key>
 										<string>English</string>
 										<key>VALUE</key>
-										<string>Installs v2021.10.17 of the Dictionary Plugin on you Mac.</string>
+										<string>Installs v2021.11.05 of the Dictionary Plugin on you Mac.</string>
 									</dict>
 									<dict>
 										<key>LANGUAGE</key>
 										<string>German</string>
 										<key>VALUE</key>
-										<string>Installiert v2021.10.17 des Lexikon-Plug-ins auf Ihren Mac.</string>
+										<string>Installiert v2021.11.05 des Lexikon-Plug-ins auf Ihren Mac.</string>
 									</dict>
 								</array>
 								<key>OPTIONS</key>
