@@ -8,7 +8,7 @@
 }
 
 body {
-    font: -apple-system-body;
+    /* font: -apple-system-body; */
     font-family: -apple-system;
     font-size: 12pt;
     margin-left: 0.9em;
@@ -16,6 +16,19 @@ body {
     margin-top: 1em;
     margin-bottom: 1.5em;
     color: text;
+}
+
+/* iOS */
+@supports (-webkit-overflow-scrolling: touch)
+{
+    body {
+        font: -apple-system-body;
+    }
+    
+    a {
+        color: text;
+        text-decoration: none;
+    }
 }
 
 a {
@@ -152,8 +165,12 @@ body > .d:nth-last-child(2) div.c {
 }
 
 /*
- === Popover-Fenster =======================
+ === Popover-/Lookup-Fenster =======================
  */
+
+html.apple_client-panel {
+    background-color: transparent;
+}
 
 html.apple_client-panel body {
     margin-top: 0em;

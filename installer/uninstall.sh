@@ -8,7 +8,7 @@ try
 	do shell script "pkill DictionaryPanel"
 end try
 try
-	do shell script "pkill -KILL com.apple.DictionaryServiceHelp"
+	do shell script "pkill -KILL com.apple.DictionaryServiceHelper"
 end try
 
 try

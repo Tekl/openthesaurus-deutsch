@@ -2,6 +2,17 @@
 
 Sorry, there’s no english changelog.
 
+## 2021.11.05
+
+### Fehler behoben (Fixed)
+
+- Der Installer kann nun auch auf ganz frischen Systemen das Plug-in automatisch aktivieren.
+- Der Installer verlangt nicht mehr, dass der Prozess DictionaryServiceHelper geschlossen sein muss. Ist nicht nötig.
+
+### Geändert (Changed)
+
+- Datenbestand vom 04.11.2021 mit 157761 Einträgen.
+
 ## v2021.10.17
 
 ### Fehler behoben (Fixed)
