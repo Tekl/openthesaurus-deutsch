@@ -10,7 +10,7 @@ try
 	do shell script "pkill DictionaryPanel"
 end try
 try
-	do shell script "pkill -KILL com.apple.DictionaryServiceHelp"
+	do shell script "pkill -KILL com.apple.DictionaryServiceHelper"
 end try
 
 tell application id "com.apple.installer"
@@ -78,6 +78,9 @@ try
 		set propList to property list file locationToPlist
 		
 		-- activate plugin
+		if not (exists property list item "DCSActiveDictionaries" of propList) then
+			make new property list item at end of propList with properties {kind:list, name:"DCSActiveDictionaries"}
+		end if
 		try
 			set dicNode to property list item "DCSActiveDictionaries" of propList
 			set pathFound to false
