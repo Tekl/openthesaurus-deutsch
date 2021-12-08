@@ -115,6 +115,9 @@ try
 	end tell
 end try
 
+-- defaults write is neccessary to update the preferences cache (killall does not work in all cases)
+do shell script "defaults write com.apple.DictionaryServices de.tekl.InstallDate \"$(date)\""
+do shell script "defaults write com.apple.Dictionary de.tekl.InstallDate \"$(date)\""
 do shell script "killall cfprefsd"
 EOF
 
