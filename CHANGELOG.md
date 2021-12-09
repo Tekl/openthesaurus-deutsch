@@ -2,6 +2,17 @@
 
 Sorry, there’s no english changelog.
 
+## v2021.12.09
+
+### Fehler behoben (Fixed)
+
+- Der Installer behebt jetzt zuverlässiger das Problem mit leeren Seiten nach dem Update von einer sehr alten Version des Plug-ins.
+
+### Geändert (Changed)
+
+- Aktualisierte Plug-in-Grafik im Installer und fürs Bundle.
+- Datenbestand vom 8.12.2021 mit 158487 Einträgen.
+
 ## 2021.11.05
 
 ### Fehler behoben (Fixed)
