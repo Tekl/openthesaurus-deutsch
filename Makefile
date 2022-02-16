@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2021.12.09
+# for OpenThesaurus Deutsch v2022.02.17-beta
 # by Wolfgang Reszel
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -64,10 +64,10 @@ all: createxmlbeta build
 release: createxml build
 
 createxmlbeta:
-	@/usr/bin/python createxml.py beta
+	@python3 createxml.py beta
 
 createxml:
-	@/usr/bin/python createxml.py release
+	@python3 createxml.py release
 
 build:
 	@$(DICT_BUILD_TOOL_BIN)/build_dict.sh $(DICT_BUILD_OPTS) "$(DICT_NAME)" "$(DICT_SRC_PATH)" "$(CSS_PATH)" "$(PLIST_PATH)"

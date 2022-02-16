@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # DIESES SCRIPT BITTE NICHT MANUELL AUSFÜHREN
 # ES WIRD PER "MAKE" AUFGERUFEN
 
-import os, sys, time, re, codecs, datetime, copy, urllib, string, pickle, email  # , subprocess, time
+import os, sys, time, re, codecs, datetime, copy, urllib.request, urllib.parse, pickle, email.utils  # , subprocess, time
 
 
 def progress(a, b, c):
@@ -43,7 +43,7 @@ morphology = {}
 for file in ["morphology-cache.txt", "../Morphologie_Deutsch/morphology-cache.txt"]:
     if os.path.isfile(file):
         print("Morpholgie-Cache-Datei gefunden und geladen.\n")
-        morphcache = open(file, 'r')
+        morphcache = open(file, 'rb')
         morphology = pickle.load(morphcache)
         morphcache.close()
         break
@@ -52,16 +52,16 @@ print("Aktueller Thesaurus wird heruntergeladen ...")
 
 bundleVersion = datetime.datetime.today().strftime("%Y.%m.%d") + versionSuffx
 
-urllib.urlcleanup()
-download = urllib.urlretrieve("https://www.openthesaurus.de/export/OpenThesaurus-Textversion.zip", "thesaurus.txt.zip", progress)
+urllib.request.urlcleanup()
+download = urllib.request.urlretrieve("https://www.openthesaurus.de/export/OpenThesaurus-Textversion.zip", "thesaurus.txt.zip", progress)
 
-if string.find(str(download[1]), "Error") > -1 or string.find(str(download[1]), "Content-Type: application/zip") == -1:
+if str(download[1]).find("Error") > -1 or str(download[1]).find("Content-Type: application/zip") == -1:
     print(download[1])
     sys.exit("Herunterladen fehlgeschlagen, bitte später noch mal versuchen")
 
 timestamp = re.sub(r"(?s)^.*Last-Modified: ([^\n]+)\n.*$", "\\1", str(download[1]))
-downloadfiledate = datetime.datetime.fromtimestamp(time.mktime(email.Utils.parsedate(timestamp))).strftime("%d.%m.%Y")
-downloadfileyear = datetime.datetime.fromtimestamp(time.mktime(email.Utils.parsedate(timestamp))).strftime("%Y")
+downloadfiledate = datetime.datetime.fromtimestamp(time.mktime(email.utils.parsedate(timestamp))).strftime("%d.%m.%Y")
+downloadfileyear = datetime.datetime.fromtimestamp(time.mktime(email.utils.parsedate(timestamp))).strftime("%Y")
 
 print("\nHeruntergeladene Datei wird entpackt ...")
 os.system('unzip -o thesaurus.txt.zip')
@@ -182,7 +182,7 @@ for line in sourcefile:
             titles[id] = element
             dvaluesplain[id] = dvalue
             parentals[id] = ""
-            linkwords[id] = urllib.quote(re.sub(r'\([^)]+\)|{[^}]+}|\[[^\]]+\]', "", element).strip().encode("utf-8"))
+            linkwords[id] = urllib.parse.quote(re.sub(r'\([^)]+\)|{[^}]+}|\[[^\]]+\]', "", element).strip().encode("utf-8"))
             headlines[id] = re.sub(r'(\([^)]+\))', '<i>\\1</i>', element)
             headlines[id] = re.sub(r'> *<', u'> <', headlines[id]).strip()  # six-per-em space U+2006
             if dvalue in morphology:
