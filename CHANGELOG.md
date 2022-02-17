@@ -2,6 +2,12 @@
 
 Sorry, there’s no english changelog.
 
+## v2022.02.17
+
+### Geändert (Changed)
+
+- Datenbestand vom 16.02.2022 mit 159697 Einträgen.
+
 ## v2021.12.09
 
 ### Fehler behoben (Fixed)

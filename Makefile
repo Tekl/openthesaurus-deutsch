@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2022.02.17-beta
+# for OpenThesaurus Deutsch v2022.02.17
 # by Wolfgang Reszel
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
