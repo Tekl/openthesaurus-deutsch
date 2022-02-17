@@ -25,7 +25,7 @@ Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple
 
 ### Installation
 
-#### Via Installationspaket
+#### Per Installationspaket
 
 1. Laden Sie die aktuelle Version des Plug-ins herunter:  [OpenThesaurus_Deutsch.dmg](https://github.com/Tekl/openthesaurus-deutsch/releases/latest/download/OpenThesaurus_Deutsch.dmg)
 2. Öffnen Sie das Disk Image und starten das enthaltene Installations-Programm „OpenThesaurus Deutsch Installation“ per Doppelklick. Folgen Sie den Anweisungen.
