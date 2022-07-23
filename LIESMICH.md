@@ -2,8 +2,8 @@
 
 ## OpenThesaurus Deutsch Lexikon-Plug-in
 
-_Version: 2022.02.17 -OS X 10.11 bis macOS 12_  
-_Copyright © 2022 Wolfgang Reszel und Daniel Naber_
+_Version: 2022.07.22 -OS X 10.11 bis macOS 12_  
+_Copyright © 2022 Wolfgang Kreutz und Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
 
@@ -11,9 +11,9 @@ Dieses Plug-in erweitert die Lexikon-App von macOS um einen **deutschen Thesauru
 
 Der vom Plug-in bereitgestellte Thesaurus basiert auf dem Online-Thesaurus [www.openthesaurus.de](https://www.openthesaurus.de/) von Daniel Naber.
 
-Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple-Lexikon-Plug-in wurde von Wolfgang Reszel entwickelt.
+Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple-Lexikon-Plug-in wurde von Wolfgang Kreutz entwickelt.
 
-**Updates und weiterführende Informationen:** [www.tekl.de](https://www.tekl.de)  
+**Updates und weiterführende Informationen:** [www.tekl.de](https://tekl.de)  
 **Support und Quellcode:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)  
 **Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)  
 **Spende:** [PayPal](https://www.paypal.me/WolfgangReszel)
@@ -91,4 +91,3 @@ Sie können das Plug-in auch von Hand aus dem Ordner `/Library/Dictionaries` ode
   Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Detals finden Sie in der GNU General Public License.  
   
   Sie sollten ein Exemplar der [GNU General Public License](LICENSE) zusammen mit diesem Programm erhalten haben. Falls nicht, siehe https://www.gnu.org/licenses/.
-

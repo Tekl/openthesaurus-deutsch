@@ -2,8 +2,8 @@
 
 ## OpenThesaurus Deutsch Dictionary Plugin
 
-_Version: 2022.02.17 - OS X 10.11 to macOS 12_  
-_Copyright © 2022 Wolfgang Reszel and Daniel Naber_
+_Version: 2022.07.22 - OS X 10.11 to macOS 12_  
+_Copyright © 2022 Wolfgang Kreutz and Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
 
@@ -11,9 +11,9 @@ This plugin extends Apple’s Dictionary Application with a **German thesaurus**
 
 The content of this plugin is based on the online thesaurus [www.openthesaurus.de](https://www.openthesaurus.de/) by Daniel Naber.
 
-The Python script to convert the OpenThesaurus dictionary into a dictionary plugin was developed by Wolfgang Reszel.
+The Python script to convert the OpenThesaurus dictionary into a dictionary plugin was developed by Wolfgang Kreutz.
 
-**Updates and further information:** [www.tekl.de](https://www.tekl.de)  
+**Updates and further information:** [www.tekl.de](https://tekl.de)  
 **Support and source code:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)  
 **Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)  
 **Donation:** [PayPal](https://www.paypal.me/WolfgangReszel)
@@ -91,4 +91,3 @@ You can manually delete the plugin from the folder `/Library/Dictionaries` or `~
   This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.  
   
   You should have received a copy of the [GNU General Public License](LICENSE) along with this program. If not, see https://www.gnu.org/licenses/.
-

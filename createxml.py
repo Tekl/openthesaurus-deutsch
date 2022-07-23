@@ -37,7 +37,7 @@ else:
     versionSuffx = ""
 
 print("Lexikon-Plug-in (OpenThesaurus Deutsch) auf Basis von OpenThesaurus.de")
-print("CreateXML v2.0.3 von Wolfgang Reszel, 2021-10-05")
+print("CreateXML v2.0.5 von Wolfgang Kreutz, 2022-07-21")
 print
 morphology = {}
 for file in ["morphology-cache.txt", "../Morphologie_Deutsch/morphology-cache.txt"]:
@@ -447,7 +447,7 @@ destfile.write(u"""
     </p>
     <h3>Über OpenThesaurus Deutsch</h3>
     <p>
-        Das Python-Skript zur Umwandlung der OpenThesaurus-Wortliste in ein Lexikon-Plug-in wurde von Wolfgang Reszel entwickelt. Den Quellcode finden Sie auf <a href="https://github.com/Tekl/openthesaurus-deutsch">GitHub</a>.
+        Das Python-Skript zur Umwandlung der OpenThesaurus-Wortliste in ein Lexikon-Plug-in wurde von Wolfgang Kreutz entwickelt. Den Quellcode finden Sie auf <a href="https://github.com/Tekl/openthesaurus-deutsch">GitHub</a>.
     </p>
     <p>
         Die Wortformen-Datei, durch welche auch die Suche nach Wörtern im Plural möglich ist, wurde auf Basis des <a href="http://www.danielnaber.de/morphologie/">Morphologie-Lexikons</a> von Daniel Naber erstellt.
@@ -485,7 +485,7 @@ for filename in rtfFiles:
     if filename == 'Makefile':
         pmdoc = re.sub(r"([_ ])v20\d+.\d+.\d+(-beta)?", "\\1v" + bundleVersion + "", pmdoc)
         pmdoc = re.sub(r"/20\d+.\d+.\d+(-beta)?/", "/" + bundleVersion + "/", pmdoc)
-    pmdoc = re.sub(r"20\d\d Wolfgang Reszel", datetime.datetime.today().strftime("%Y") + " Wolfgang Reszel", pmdoc)
+    pmdoc = re.sub(r"20\d\d Wolfgang Kreutz", datetime.datetime.today().strftime("%Y") + " Wolfgang Kreutz", pmdoc)
     pmdocFile.close()
     if '.rtf' in filename:
         pmdocFile = codecs.open(filename, 'w', 'windows-1252')

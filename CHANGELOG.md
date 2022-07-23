@@ -2,11 +2,17 @@
 
 Sorry, there’s no english changelog.
 
+## v2022.07.22
+
+- Datenbestand vom 21.7.2022 mit 161844 Einträgen.
+- Änderung des Namens im Copyright und im Klappentext (Wolfgang Reszel→Wolfgang Kreutz). 
+
 ## v2022.02.17
 
 ### Geändert (Changed)
 
 - Datenbestand vom 16.02.2022 mit 159697 Einträgen.
+- Code auf Python 3 aktualisiert, weil Python 2 mit macOS 12.3 nicht mehr verfügbar ist. Das ist aber nur relevant, wenn man das Plug-in selbst erzeugen möchte. 
 
 ## v2021.12.09
 

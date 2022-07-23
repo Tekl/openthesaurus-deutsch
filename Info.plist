@@ -9,11 +9,11 @@
 	<key>CFBundleName</key>
 	<string>OpenThesaurus Deutsch</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2022.02.17</string>
+	<string>2022.07.22</string>
 	<key>CFBundleVersion</key>
-	<string>2022.02.17</string>
+	<string>2022.07.22</string>
 	<key>DCSDictionaryCopyright</key>
-	<string>&lt;p&gt;&lt;b&gt;OpenThesaurus Deutsch&lt;/b&gt; v2022.02.17&lt;/p&gt;&lt;p&gt;Content: © 2003-2022 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2022 Wolfgang Reszel, www.tekl.de&lt;/p&gt;&lt;p&gt;&lt;a href="https://tekl.de/dictversion.php?version=2022.02.17&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</string>
+	<string>&lt;p&gt;&lt;b&gt;OpenThesaurus Deutsch&lt;/b&gt; v2022.07.22&lt;/p&gt;&lt;p&gt;Content: © 2003-2022 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2022 Wolfgang Kreutz, www.tekl.de&lt;/p&gt;&lt;p&gt;&lt;a href="https://tekl.de/dictversion.php?version=2022.07.22&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</string>
 	<key>DCSDictionaryDefaultPrefs</key>
 	<dict>
 		<key>Font</key>
@@ -24,7 +24,7 @@
 	<key>DCSDictionaryFrontMatterReferenceID</key>
 	<string>front_back_matter</string>
 	<key>DCSDictionaryManufacturerName</key>
-	<string>Wolfgang Reszel (www.tekl.de)</string>
+	<string>Wolfgang Kreutz (www.tekl.de)</string>
 	<key>DCSDictionaryPrefsHTML</key>
 	<string>OpenThesaurus_prefs.html</string>
 	<key>DCSDictionaryUseSystemAppearance</key>
@@ -36,6 +36,6 @@
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>© P21 Daniel Naber, www.openthesaurus.de / Wolfgang Reszel, www.tekl.de </string>
+	<string>© 2022 Daniel Naber, www.openthesaurus.de / Wolfgang Kreutz, www.tekl.de </string>
 </dict>
 </plist>
