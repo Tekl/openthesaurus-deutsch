@@ -28,16 +28,27 @@ def normalize(s):
     s = s.replace(u"Ü", "U")
     return s
 
-
 os.system("clear")
+
+osVersionMax = "13"
+osVersionMin = "10.11"
+osVersionMinInt = "101100"
+osVersionMinPrefix ="OS X"
 
 if sys.argv[1] == "beta":
     versionSuffx = "-beta"
 else:
     versionSuffx = ""
 
+if len(sys.argv) > 2:    
+    if sys.argv[2] == "legacy":
+        versionSuffx = "-Legacy" + versionSuffx
+        osVersionMin = "10.6"
+        osVersionMinInt = "100600"
+        osVersionMinPrefix = "Mac OS X"
+
 print("Lexikon-Plug-in (OpenThesaurus Deutsch) auf Basis von OpenThesaurus.de")
-print("CreateXML v2.0.5 von Wolfgang Kreutz, 2022-07-21")
+print("CreateXML v2.0.7-oth von Wolfgang Kreutz, 2022-08-02")
 print
 morphology = {}
 for file in ["morphology-cache.txt", "../Morphologie_Deutsch/morphology-cache.txt"]:
@@ -62,6 +73,10 @@ if str(download[1]).find("Error") > -1 or str(download[1]).find("Content-Type: a
 timestamp = re.sub(r"(?s)^.*Last-Modified: ([^\n]+)\n.*$", "\\1", str(download[1]))
 downloadfiledate = datetime.datetime.fromtimestamp(time.mktime(email.utils.parsedate(timestamp))).strftime("%d.%m.%Y")
 downloadfileyear = datetime.datetime.fromtimestamp(time.mktime(email.utils.parsedate(timestamp))).strftime("%Y")
+
+print("\nBundle Version: " + bundleVersion)
+print("Download Date:  " + downloadfiledate)
+print("Download Year:  "+ downloadfileyear)
 
 print("\nHeruntergeladene Datei wird entpackt ...")
 os.system('unzip -o thesaurus.txt.zip')
@@ -450,7 +465,7 @@ destfile.write(u"""
         Das Python-Skript zur Umwandlung der OpenThesaurus-Wortliste in ein Lexikon-Plug-in wurde von Wolfgang Kreutz entwickelt. Den Quellcode finden Sie auf <a href="https://github.com/Tekl/openthesaurus-deutsch">GitHub</a>.
     </p>
     <p>
-        Die Wortformen-Datei, durch welche auch die Suche nach Wörtern im Plural möglich ist, wurde auf Basis des <a href="http://www.danielnaber.de/morphologie/">Morphologie-Lexikons</a> von Daniel Naber erstellt.
+        Die Wortformen-Datei, durch welche auch die Suche nach Wörtern im Plural möglich ist, wurde auf Basis des <a href="https://www.danielnaber.de/morphologie/">Morphologie-Lexikons</a> von Daniel Naber erstellt.
     </p>
     <p>
         <img src="Images/gplv3-88x31.png" align="left" style="padding-right:10px" alt=""/>
@@ -478,14 +493,18 @@ for filename in rtfFiles:
     else:
         pmdocFile = codecs.open(filename, 'r', 'UTF-8')
     pmdoc = pmdocFile.read()
-    pmdoc = re.sub(r"Version: .\d+.\d+.\d+(-beta)?", "Version: " + bundleVersion, pmdoc)
-    pmdoc = re.sub(r">20\d+.\d+.\d+(-beta)?<", ">" + bundleVersion + "<", pmdoc)
-    pmdoc = re.sub(r" 20\d+.\d+.\d+(-beta)?\"", " " + bundleVersion + "\"", pmdoc)
-    pmdoc = re.sub(r" v20\d+.\d+.\d+(-beta)?", " v" + bundleVersion, pmdoc)
+    pmdoc = re.sub(r"Version: .\d+.\d+.\d+(-[Ll]egacy)?(-beta)?", "Version: " + bundleVersion, pmdoc)
+    pmdoc = re.sub(r">20\d+.\d+.\d+(-[Ll]egacy)?(-beta)?<", ">" + bundleVersion + "<", pmdoc)
+    pmdoc = re.sub(r" 20\d+.\d+.\d+(-[Ll]egacy)?(-beta)?\"", " " + bundleVersion + "\"", pmdoc)
+    pmdoc = re.sub(r" v20\d+.\d+.\d+(-[Ll]egacy)?(-beta)?", " v" + bundleVersion, pmdoc)
     if filename == 'Makefile':
-        pmdoc = re.sub(r"([_ ])v20\d+.\d+.\d+(-beta)?", "\\1v" + bundleVersion + "", pmdoc)
-        pmdoc = re.sub(r"/20\d+.\d+.\d+(-beta)?/", "/" + bundleVersion + "/", pmdoc)
+        pmdoc = re.sub(r"([_ ])v20\d+.\d+.\d+(-[Ll]egacy)?(-beta)?", "\\1v" + bundleVersion + "", pmdoc)
+        pmdoc = re.sub(r"/20\d+.\d+.\d+(-[Ll]egacy)?(-beta)?/", "/" + bundleVersion + "/", pmdoc)
     pmdoc = re.sub(r"20\d\d Wolfgang Kreutz", datetime.datetime.today().strftime("%Y") + " Wolfgang Kreutz", pmdoc)
+    pmdoc = re.sub(r" OS X \d+\.\d+ (bis|to) macOS \d+\.?\d*", (r" OS X " + osVersionMin + r" \1 macOS " + osVersionMax), pmdoc)
+    if '.pkgproj' in filename:
+        pmdoc = re.sub(r"(Mac OS X|OS X|macOS) \d+\.\d+", osVersionMinPrefix + " " + osVersionMin, pmdoc)
+        pmdoc = re.sub(r"<integer>\d\d\d\d00</integer>", "<integer>" + osVersionMinInt + "</integer>", pmdoc)
     pmdocFile.close()
     if '.rtf' in filename:
         pmdocFile = codecs.open(filename, 'w', 'windows-1252')
@@ -501,8 +520,9 @@ plist = re.sub(r"(?u)(<key>CFBundleVersion</key>\s+<string>)[^<]+(</string>)", "
 plist = re.sub(r"(?u)(<key>CFBundleShortVersionString</key>\s+<string>)[^<]+(</string>)", "\\g<1>" + bundleVersion + "\\2", plist)
 plist = re.sub(u"© \d\d\d\d ", u"© " + datetime.datetime.today().strftime("%Y") + u" ", plist)
 plist = re.sub(u"© (\d\d\d\d)-\d\d\d\d ", u"© \\1-" + datetime.datetime.today().strftime("%Y") + u" ", plist)
-plist = re.sub(r"version=\d\d\d\d\.\d+\.\d+(-beta)?", "version=" + bundleVersion, plist)
-plist = re.sub(r" v\d\d\d\d\.\d+\.\d+(-beta)?", " v" + bundleVersion, plist)
+plist = re.sub(r"version=\d\d\d\d\.\d+\.\d+(-[Ll]egacy)?(-beta)?", "version=" + bundleVersion, plist)
+plist = re.sub(r" v\d\d\d\d\.\d+\.\d+(-[Ll]egacy)?(-beta)?", " v" + bundleVersion, plist)
+plist = re.sub(r"<string>\d\d\.\d+</string>", "<string>" + osVersionMin + "</string>", plist)
 plistFile.close()
 plistFile = codecs.open('Info.plist', 'w', 'UTF-8')
 plistFile.write(plist)
