@@ -2,7 +2,7 @@
 
 ## OpenThesaurus Deutsch Dictionary Plugin
 
-_Version: 2022.07.22 - OS X 10.11 to macOS 12_  
+_Version: 2022.08.02-legacy-beta - OS X 10.6  macOS 13_  
 _Copyright © 2022 Wolfgang Kreutz and Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
@@ -62,7 +62,7 @@ You can manually delete the plugin from the folder `/Library/Dictionaries` or `~
   - `/Applications/Utilities/Dictionary Development Kit`
 - Install the Xcode Command Line Tools with: `
  xcode-select --install`
-- *Optional:* To generate the Installer, you have to install the free tool [Packages](http://s.sudre.free.fr/Software/Packages/about.html)
+- *Optional:* To generate the Installer, you have to install the free tool [Packages](https://s.sudre.free.fr/Software/Packages/about.html)
 - *Optional:* To generate the Disk Image, you need [DMG Canvas](https://www.araelium.com/dmgcanvas) (20 US-$).
 
 #### Start building with Terminal

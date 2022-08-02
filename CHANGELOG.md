@@ -2,7 +2,15 @@
 
 Sorry, there’s no english changelog.
 
+## v2022.07.02
+
+### Geändert (Changed)
+
+- Datenbestand vom 1.8.2022 mit 162012 Einträgen.
+
 ## v2022.07.22
+
+### Geändert (Changed)
 
 - Datenbestand vom 21.7.2022 mit 161844 Einträgen.
 - Änderung des Namens im Copyright und im Klappentext (Wolfgang Reszel→Wolfgang Kreutz). 
@@ -74,7 +82,7 @@ Sorry, there’s no english changelog.
 
 ### Geändert (Changed)
 
-- Berücksichtigt deutlich mehr Wortformen bei Suchbegriffen (auf Basis des [Morphologie-Lexikons](http://www.danielnaber.de/morphologie/) von Daniel Naber, Stand 25.6.2021, LT v5.4)
+- Berücksichtigt deutlich mehr Wortformen bei Suchbegriffen (auf Basis des [Morphologie-Lexikons](https://www.danielnaber.de/morphologie/) von Daniel Naber, Stand 25.6.2021, LT v5.4)
 - Das Plug-in liegt nun in einem moderneren Format vor, das allerdings nur zu OS X 10.11 und höher kompatibel ist. Das verhindert auf aktuellen Systemen willkürliche Abstürze bei einigen Programmen wie PDF Expert.
 - Datenbestand vom 26.09.2021 mit 156834 Einträgen.
 
