@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2022.07.22
+# for OpenThesaurus Deutsch v2022.08.02-legacy-beta-legacy-beta
 # by Wolfgang Kreutz
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -17,8 +17,9 @@ CSS_PATH        = ThesaurusDeutsch.css
 PLIST_PATH      = Info.plist
 DATE            = `date +"%Y.%m.%d"`
 CURR_PATH       = `pwd`
+VERSION         = `cat VERSION`
+VERSION_ZIP     = `cat ../../VERSION`
 
-#DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.6
 DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.11
 
 # Suppress adding supplementary key.
@@ -64,35 +65,36 @@ all: createxmlbeta build
 release: createxml build
 
 createxmlbeta:
+	@echo $(DATE)-beta > VERSION
 	@python3 createxml.py beta
 
 createxml:
+	@echo $(DATE) > VERSION
 	@python3 createxml.py release
 
 build:
 	@$(DICT_BUILD_TOOL_BIN)/build_dict.sh $(DICT_BUILD_OPTS) "$(DICT_NAME)" "$(DICT_SRC_PATH)" "$(CSS_PATH)" "$(PLIST_PATH)"
 	@mkdir "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries"
-	@echo -n $(DATE) > VERSION
-	@mkdir releases/$(cat VERSION)/ | true
+	@mkdir releases/$(VERSION)/ | true
 	@Rez -a images/icons/dictplug.rsrc -o "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary/Icon"$$'\r'
 	@SetFile -a C "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary"
 	@SetFile -a V "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary/Icon"$$'\r'
 	@mv -f "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary" "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"
-	@cd objects/Dictionaries; zip -r "../../releases/$(cat VERSION)/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
+	@cd objects/Dictionaries; zip -r "../../releases/$(VERSION_ZIP)/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
 	@echo "Done."
 	@echo "Use 'sudo make install' to install the dictionary or 'make dmg' or 'make releasedmg' to create the Disk Image."
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 dmg:
 	@echo "Creating Beta Installer ..."
-	@mkdir releases/$(cat VERSION)/ | true
+	@mkdir releases/$(VERSION)/ | true
 	@/usr/local/bin/packagesbuild --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
 	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
 	@rm "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg"
 	@echo "Creating Beta Disk Image …"
-	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(cat VERSION)/$(DICT_NAME_NSPC).dmg -setTextString version v$(cat VERSION)-beta
+	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(VERSION)/$(DICT_NAME_NSPC).dmg -setTextString version v$(VERSION)
 	@echo "Beta Installer and Beta Disk Image created."
-	@open releases/$(cat VERSION)/$(DICT_NAME_NSPC).dmg
+	@open releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
 	@echo "- use 'make notarize' to notarize the disk image"
 	@echo "- use 'make nhistory' to check the notarization status"
 	@echo "- use 'make nstaple' to include the notarization ticket into the disk image"
@@ -100,27 +102,27 @@ dmg:
 
 releasedmg:
 	@echo "Creating Installer ..."
-	@mkdir releases/$(cat VERSION)/ | true
+	@mkdir releases/$(VERSION)/ | true
 	@/usr/local/bin/packagesbuild --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
 	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
 	@rm "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg"
 	@echo "Creating Disk Image …"
-	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(cat VERSION)/$(DICT_NAME_NSPC).dmg -setTextString version v$(cat VERSION)
+	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(VERSION)/$(DICT_NAME_NSPC).dmg -setTextString version v$(VERSION)
 	@echo "Installer and Disk Image created."
-	@open releases/$(cat VERSION)/$(DICT_NAME_NSPC).dmg
+	@open releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
 	@echo "- use 'make notarize' to notarize the disk image"
 	@echo "- use 'make nhistory' to check the notarization status"
 	@echo "- use 'make nstaple' to include the notarization ticket into the disk image"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 notarize:
-	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/$(cat VERSION)/$(DICT_NAME_NSPC).dmg
+	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
 
 nhistory:
 	xcrun altool --notarization-history 0 -u "tekl@mac.com" -p "@keychain:AC_PASSWORD"
 
 nstaple:
-	xcrun stapler staple releases/$(cat VERSION)/$(DICT_NAME_NSPC).dmg
+	xcrun stapler staple releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
 
 install:
 	@echo "Installing into $(DESTINATION_FOLDER)".
@@ -129,6 +131,7 @@ install:
 	@rm -rf ~/Library/Caches/com.apple.DictionaryManager
 	@rm -rf ~/Library/Caches/com.apple.Dictionary
 	@rm -rf ~/Library/Caches/com.apple.DictionaryServices
+	@rm -rf $(DESTINATION_FOLDER)/"$(DICT_NAME)".dictionary
 	@defaults write com.apple.Dictionary WebKitDeveloperExtras -bool true
 	@mkdir -p $(DESTINATION_FOLDER)
 	@ditto --noextattr $(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"$(DICT_NAME)".dictionary $(DESTINATION_FOLDER)/"$(DICT_NAME)".dictionary
