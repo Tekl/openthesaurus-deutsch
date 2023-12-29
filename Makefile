@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2022.08.02-legacy-beta-legacy-beta
+# for OpenThesaurus Deutsch v2023.12.28-Legacy
 # by Wolfgang Kreutz
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -64,6 +64,8 @@ all: createxmlbeta build
 
 release: createxml build
 
+releasedist: createxml build releasedmg notarize
+
 createxmlbeta:
 	@echo $(DATE)-beta > VERSION
 	@python3 createxml.py beta
@@ -80,7 +82,7 @@ build:
 	@SetFile -a C "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary"
 	@SetFile -a V "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary/Icon"$$'\r'
 	@mv -f "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary" "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"
-	@cd objects/Dictionaries; zip -r "../../releases/$(VERSION_ZIP)/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
+	@cd $(DICT_DEV_KIT_OBJ_DIR)/Dictionaries; zip -r "../../releases/$(VERSION_ZIP)/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
 	@echo "Done."
 	@echo "Use 'sudo make install' to install the dictionary or 'make dmg' or 'make releasedmg' to create the Disk Image."
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
@@ -89,39 +91,30 @@ dmg:
 	@echo "Creating Beta Installer ..."
 	@mkdir releases/$(VERSION)/ | true
 	@/usr/local/bin/packagesbuild --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
-	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
+	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Kreutz (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
 	@rm "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg"
 	@echo "Creating Beta Disk Image …"
 	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(VERSION)/$(DICT_NAME_NSPC).dmg -setTextString version v$(VERSION)
 	@echo "Beta Installer and Beta Disk Image created."
 	@open releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
-	@echo "- use 'make notarize' to notarize the disk image"
-	@echo "- use 'make nhistory' to check the notarization status"
-	@echo "- use 'make nstaple' to include the notarization ticket into the disk image"
+	@echo "- use 'make notarize' to notarize and staple the disk image"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 releasedmg:
 	@echo "Creating Installer ..."
 	@mkdir releases/$(VERSION)/ | true
 	@/usr/local/bin/packagesbuild --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
-	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
+	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Kreutz (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
 	@rm "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg"
 	@echo "Creating Disk Image …"
 	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(VERSION)/$(DICT_NAME_NSPC).dmg -setTextString version v$(VERSION)
 	@echo "Installer and Disk Image created."
 	@open releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
-	@echo "- use 'make notarize' to notarize the disk image"
-	@echo "- use 'make nhistory' to check the notarization status"
-	@echo "- use 'make nstaple' to include the notarization ticket into the disk image"
+	@echo "- use 'make notarize' to notarize and staple the disk image"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 notarize:
-	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
-
-nhistory:
-	xcrun altool --notarization-history 0 -u "tekl@mac.com" -p "@keychain:AC_PASSWORD"
-
-nstaple:
+	xcrun notarytool submit --keychain-profile 3D3Y3WDMYF --wait releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
 	xcrun stapler staple releases/$(VERSION)/$(DICT_NAME_NSPC).dmg
 
 install:

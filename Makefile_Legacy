@@ -17,8 +17,8 @@ CSS_PATH        = ThesaurusDeutsch.css
 PLIST_PATH      = Info.plist
 DATE            = `date +"%Y.%m.%d"`
 CURR_PATH       = `pwd`
-VERSION         = `cat VERSION`
-VERSION_ZIP     = `cat ../../VERSION`
+VERSION         = `cat VERSION-LEGACY`
+VERSION_ZIP     = `cat ../../VERSION-LEGACY`
 
 DICT_BUILD_OPTS = -c 2 -t 1 -e 0 -v 10.6
 
@@ -64,12 +64,14 @@ all: createxmlbeta build
 
 release: createxml build
 
+releasedist: createxml build releasedmg notarize
+
 createxmlbeta:
-	@echo $(DATE)-legacy-beta > VERSION
+	@echo $(DATE)-legacy-beta > VERSION-LEGACY
 	@python3 createxml.py beta legacy
 
 createxml:
-	@echo $(DATE)-legacy > VERSION
+	@echo $(DATE)-legacy > VERSION-LEGACY
 	@python3 createxml.py release legacy
 
 build:
@@ -89,39 +91,30 @@ dmg:
 	@echo "Creating Beta Installer  ..."
 	@mkdir "releases/$(VERSION)/" | true
 	@/usr/local/bin/packagesbuild --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
-	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
+	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Kreutz (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
 	@rm "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg"
 	@echo "Creating Beta Disk Image …"
 	/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(VERSION)/$(DICT_NAME_NSPC)-Legacy.dmg -setTextString version v$(VERSION)
 	@echo "Legacy Beta Installer and Beta Disk Image created."
 	@open releases/$(VERSION)/$(DICT_NAME_NSPC)-Legacy.dmg
-	@echo "- use 'make -f Makefile_Legacy notarize' to notarize the disk image"
-	@echo "- use 'make -f Makefile_Legacy nhistory' to check the notarization status"
-	@echo "- use 'make -f Makefile_Legacy nstaple' to include the notarization ticket into the disk image"
+	@echo "- use 'make -f Makefile_Legacy notarize' to notarize and staple the disk image"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 releasedmg:
 	@echo "Creating Installer ..."
 	@mkdir "releases/$(VERSION)/" | true
 	@/usr/local/bin/packagesbuild --build-folder "$(shell pwd)/releases" "installer/$(DICT_NAME).pkgproj"
-	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Reszel (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
+	@/usr/bin/productsign --sign "Developer ID Installer: Wolfgang Kreutz (3D3Y3WDMYF)" "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg" "$(shell pwd)/releases/$(DICT_NAME) Installation.pkg"
 	@rm "$(shell pwd)/releases/$(DICT_NAME) Temp.pkg"
 	@echo "Creating Disk Image …"
 	@/Applications/DMG\ Canvas.app/Contents/Resources/dmgcanvas installer/$(DICT_NAME_NSPC).dmgCanvas releases/$(VERSION)/$(DICT_NAME_NSPC)-Legacy.dmg -setTextString version v$(VERSION)
 	@echo "Legacy Installer and Disk Image created."
 	@open releases/$(VERSION)/$(DICT_NAME_NSPC)-Legacy.dmg
-	@echo "- use 'make -f Makefile_Legacy notarize' to notarize the disk image"
-	@echo "- use 'make -f Makefile_Legacy nhistory' to check the notarization status"
-	@echo "- use 'make -f Makefile_Legacy nstaple' to include the notarization ticket into the disk image"
+	@echo "- use 'make -f Makefile_Legacy notarize' to notarize and staple the disk image"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 notarize:
-	xcrun altool --notarize-app --primary-bundle-id "de.tekl.dictionary.openThesaurusDeutsch.dmg" --username "tekl@mac.com" --password "@keychain:AC_PASSWORD" --file releases/$(VERSION)/$(DICT_NAME_NSPC)-Legacy.dmg
-
-nhistory:
-	xcrun altool --notarization-history 0 -u "tekl@mac.com" -p "@keychain:AC_PASSWORD"
-
-nstaple:
+	xcrun notarytool submit --keychain-profile 3D3Y3WDMYF --wait releases/$(VERSION)/$(DICT_NAME_NSPC)-Legacy.dmg
 	xcrun stapler staple releases/$(VERSION)/$(DICT_NAME_NSPC)-Legacy.dmg
 
 install:

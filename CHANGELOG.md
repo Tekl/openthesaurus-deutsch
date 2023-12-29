@@ -2,6 +2,17 @@
 
 Sorry, there’s no english changelog.
 
+## v2023.12.28
+
+### Geändert (Changed)
+
+- Datenbestand vom 27.12.2023 mit 167367 Einträgen.
+- Font-Auswahl reduziert, da das Lexikon schon länger nur noch System-Fonts unterstützt.
+
+### Fehler behoben (Fixed)
+
+- Automatische Aktivierung des Plug-ins nach der Installation verbessert. Manchmal wurden bereits aktivierte Plug-ins deaktiviert.
+
 ## v2022.07.02
 
 ### Geändert (Changed)

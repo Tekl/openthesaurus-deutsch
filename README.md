@@ -2,8 +2,8 @@
 
 ## OpenThesaurus Deutsch Dictionary Plugin
 
-_Version: 2022.08.02-legacy-beta - OS X 10.6  macOS 13_  
-_Copyright © 2022 Wolfgang Kreutz and Daniel Naber_
+_Version: 2023.12.28-Legacy - OS X 10.11 to macOS 14_  
+_Copyright © 2023 Wolfgang Kreutz and Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
 
