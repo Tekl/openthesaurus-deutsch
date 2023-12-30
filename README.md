@@ -31,6 +31,16 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 2. Double-click on “OpenThesaurus Deutsch Installation” to start the installer.
 3. Follow its instructions. To install the plugin for the current user and not for all users, click on “Change Install Location …” in the installer and select “Install for me only”.
 
+#### Install with Homebrew
+
+If you use the package manager [Homebrew](https://brew.sh/de), you can start the installation with this terminal command:
+
+`brew install tekl/dictionaries/openthesaurus-deutsch`.
+
+The plugin will always be installed in `~/Library/Dictionaries`.
+
+The command `brew upgrade` can be used to automatically install updates to the plugin.
+
 #### Manual Installation
 
 1. Download the zipped dictionary plugin bundle: [OpenThesaurus_Deutsch.dictionaryfile.zip](https://github.com/Tekl/openthesaurus-deutsch/releases/latest/download/OpenThesaurus_Deutsch_dictionaryfile.zip)
@@ -46,6 +56,10 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 To remove the plugin form your system, just launch the installer again and select the option “🚫 Uninstall”.
 
 You can manually delete the plugin from the folder `/Library/Dictionaries` or `~/Library/Dictionaries` and restart the “Dictionary.app”.
+
+If you have installed the plugin via Homebrew, you can get rid of it with the following command:
+
+`brew uninstall optenthesaurus-deutsch`
 
 ### Build the dictionary by yourself using the source code
 
