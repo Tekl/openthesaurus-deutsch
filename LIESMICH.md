@@ -2,7 +2,7 @@
 
 ## OpenThesaurus Deutsch Lexikon-Plug-in
 
-_Version: 2024.05.14 -OS X 10.11 bis macOS 14_  
+_Version: 2024.05.14 - OS X 10.11 bis macOS 14_  
 _Copyright © 2024 Wolfgang Kreutz und Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
