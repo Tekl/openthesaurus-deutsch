@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2023.12.28-Legacy
+# for OpenThesaurus Deutsch v2024.05.14
 # by Wolfgang Kreutz
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################

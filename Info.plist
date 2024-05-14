@@ -9,11 +9,11 @@
 	<key>CFBundleName</key>
 	<string>OpenThesaurus Deutsch</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2023.12.28-Legacy</string>
+	<string>2024.05.14</string>
 	<key>CFBundleVersion</key>
-	<string>2023.12.28-Legacy</string>
+	<string>2024.05.14</string>
 	<key>DCSDictionaryCopyright</key>
-	<string>&lt;p&gt;&lt;b&gt;OpenThesaurus Deutsch&lt;/b&gt; v2023.12.28-Legacy&lt;/p&gt;&lt;p&gt;Content: © 2003-2023 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2023 Wolfgang Kreutz, www.tekl.de&lt;/p&gt;&lt;p&gt;&lt;a href="https://tekl.de/dictversion.php?version=2023.12.28-Legacy&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</string>
+	<string>&lt;p&gt;&lt;b&gt;OpenThesaurus Deutsch&lt;/b&gt; v2024.05.14&lt;/p&gt;&lt;p&gt;Content: © 2003-2024 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2024 Wolfgang Kreutz, www.tekl.de&lt;/p&gt;&lt;p&gt;&lt;a href="https://tekl.de/dictversion.php?version=2024.05.14&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</string>
 	<key>DCSDictionaryDefaultPrefs</key>
 	<dict>
 		<key>Font</key>
@@ -34,8 +34,8 @@
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.6</string>
+	<string>10.11</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2023 Daniel Naber, www.openthesaurus.de / Wolfgang Kreutz, www.tekl.de </string>
+	<string>© 2024 Daniel Naber, www.openthesaurus.de / Wolfgang Kreutz, www.tekl.de </string>
 </dict>
 </plist>

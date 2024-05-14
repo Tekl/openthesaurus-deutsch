@@ -526,7 +526,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>2023.12.28-Legacy</string>
+				<string>2024.05.14</string>
 			</dict>
 			<key>TYPE</key>
 			<integer>0</integer>
@@ -1092,13 +1092,13 @@
 										<key>LANGUAGE</key>
 										<string>English</string>
 										<key>VALUE</key>
-										<string>Installs v2023.12.28-Legacy of the Dictionary Plugin on you Mac.</string>
+										<string>Installs v2024.05.14 of the Dictionary Plugin on you Mac.</string>
 									</dict>
 									<dict>
 										<key>LANGUAGE</key>
 										<string>German</string>
 										<key>VALUE</key>
-										<string>Installiert v2023.12.28-Legacy des Lexikon-Plug-ins auf Ihren Mac.</string>
+										<string>Installiert v2024.05.14 des Lexikon-Plug-ins auf Ihren Mac.</string>
 									</dict>
 								</array>
 								<key>OPTIONS</key>
@@ -1406,7 +1406,7 @@
 						<key>IC_REQUIREMENT_OS_DISTRIBUTION_TYPE</key>
 						<integer>0</integer>
 						<key>IC_REQUIREMENT_OS_MINIMUM_VERSION</key>
-						<integer>100600</integer>
+						<integer>101100</integer>
 					</dict>
 					<key>IC_REQUIREMENT_CHECK_TYPE</key>
 					<integer>1</integer>
@@ -1418,13 +1418,13 @@
 							<key>LANGUAGE</key>
 							<string>English</string>
 							<key>VALUE</key>
-							<string>This dictionary plugin requires Mac OS X 10.6 or later!</string>
+							<string>This dictionary plugin requires OS X 10.11 or later!</string>
 						</dict>
 						<dict>
 							<key>LANGUAGE</key>
 							<string>German</string>
 							<key>VALUE</key>
-							<string>Dieses Wörterbuch-Plug-in erfordert Mac OS X 10.6 oder höher!</string>
+							<string>Dieses Wörterbuch-Plug-in erfordert OS X 10.11 oder höher!</string>
 						</dict>
 					</array>
 					<key>NAME</key>
