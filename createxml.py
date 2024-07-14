@@ -6,10 +6,8 @@
 
 import os, sys, time, re, codecs, datetime, copy, urllib.request, urllib.parse, pickle, email.utils  # , subprocess, time
 
-
 def progress(a, b, c):
     sys.stdout.write(".")
-
 
 def sort_by_value(d):
     """ Returns the keys of dictionary d sorted by their values """
@@ -17,7 +15,6 @@ def sort_by_value(d):
     backitems = [[v[1], v[0]] for v in items]
     backitems.sort()
     return [backitems[i][1] for i in range(0, len(backitems))]
-
 
 def normalize(s):
     s = s.replace(u"ä", "a")
@@ -30,7 +27,7 @@ def normalize(s):
 
 os.system("clear")
 
-osVersionMax = "13"
+osVersionMax = "15"
 osVersionMin = "10.11"
 osVersionMinInt = "101100"
 osVersionMinPrefix = "OS X"
@@ -50,7 +47,7 @@ if len(sys.argv) > 2:
         osVersionMinPrefix = "Mac OS X"
 
 print("Lexikon-Plug-in (OpenThesaurus Deutsch) auf Basis von OpenThesaurus.de")
-print("CreateXML v2.0.8-oth von Wolfgang Kreutz, 2023-12-28")
+print("CreateXML v2.0.9-oth von Wolfgang Kreutz, 2024-07-14")
 print
 morphology = {}
 for file in ["morphology-cache.txt", "../Morphologie_Deutsch/morphology-cache.txt"]:

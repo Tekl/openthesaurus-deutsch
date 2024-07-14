@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2024.05.14
+# for OpenThesaurus Deutsch v2024.07.14
 # by Wolfgang Kreutz
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -53,7 +53,7 @@ DICT_BUILD_TOOL_BIN	    = $(DICT_BUILD_TOOL_DIR)/bin
 DICT_DEV_KIT_OBJ_DIR = ./objects
 export DICT_DEV_KIT_OBJ_DIR
 
-DESTINATION_FOLDER = /Library/Dictionaries
+DESTINATION_FOLDER = ~/Library/Dictionaries
 RM = /bin/rm
 
 CR = `echo "\r"`
@@ -84,7 +84,7 @@ build:
 	@mv -f "$(DICT_DEV_KIT_OBJ_DIR)/$(DICT_NAME).dictionary" "$(DICT_DEV_KIT_OBJ_DIR)/Dictionaries/"
 	@cd $(DICT_DEV_KIT_OBJ_DIR)/Dictionaries; zip -r "../../releases/$(VERSION_ZIP)/${DICT_NAME_NSPC}_dictionaryfile.zip" "$(DICT_NAME).dictionary/"
 	@echo "Done."
-	@echo "Use 'sudo make install' to install the dictionary or 'make dmg' or 'make releasedmg' to create the Disk Image."
+	@echo "Use 'make install' to install the dictionary or 'make dmg' or 'make releasedmg' to create the Disk Image."
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
 
 dmg:

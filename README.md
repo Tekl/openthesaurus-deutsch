@@ -2,7 +2,7 @@
 
 ## OpenThesaurus Deutsch Dictionary Plugin
 
-_Version: 2024.05.14 - OS X 10.11 to macOS 14_  
+_Version: 2024.07.14 - OS X 10.11 to macOS 15_  
 _Copyright © 2024 Wolfgang Kreutz and Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
