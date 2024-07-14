@@ -4,6 +4,8 @@ Sorry, there’s no english changelog.
 
 ## v2024.07.14
 
+### Geändert (Changed)
+
 - Datenbestand vom 13.07.2024 mit 169335 Einträgen.
 
 ## v2024.05.14
