@@ -1,6 +1,6 @@
 ###########################
 # Makefile
-# for OpenThesaurus Deutsch v2024.07.15
+# for OpenThesaurus Deutsch v2024.11.09
 # by Wolfgang Kreutz
 # https://github.com/Tekl/openthesaurus-deutsch
 ###########################
@@ -64,7 +64,7 @@ all: createxmlbeta build
 
 release: createxml build
 
-releasedist: createxml build releasedmg notarize
+releasedist: createxml build releasedmg notarize shasum
 
 createxmlbeta:
 	@echo $(DATE)-beta > VERSION

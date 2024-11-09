@@ -9,11 +9,11 @@
 	<key>CFBundleName</key>
 	<string>OpenThesaurus Deutsch</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2024.07.15</string>
+	<string>2024.11.09</string>
 	<key>CFBundleVersion</key>
-	<string>2024.07.15</string>
+	<string>2024.11.09</string>
 	<key>DCSDictionaryCopyright</key>
-	<string>&lt;p&gt;&lt;b&gt;OpenThesaurus Deutsch&lt;/b&gt; v2024.07.15&lt;/p&gt;&lt;p&gt;Content: © 2003-2024 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2024 Wolfgang Kreutz, tekl.de&lt;/p&gt;&lt;p&gt;&lt;a href="https://tekl.de/dictversion.php?version=2024.07.15&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</string>
+	<string>&lt;p&gt;&lt;b&gt;OpenThesaurus Deutsch&lt;/b&gt; v2024.11.09&lt;/p&gt;&lt;p&gt;Content: © 2003-2024 Daniel Naber, www.openthesaurus.de&lt;br/&gt;Plug-in: © 2024 Wolfgang Kreutz, tekl.de&lt;/p&gt;&lt;p&gt;&lt;a href="https://tekl.de/dictversion.php?version=2024.11.09&amp;ref=prefs&amp;plugin=OpenThesaurus%20Deutsch"&gt;&lt;button&gt;↺ Auf Update prüfen&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;</string>
 	<key>DCSDictionaryDefaultPrefs</key>
 	<dict>
 		<key>Font</key>
