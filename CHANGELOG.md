@@ -2,6 +2,16 @@
 
 Sorry, there’s no english changelog.
 
+## v2025.11.09
+
+### Hinzugefügt (Added)
+
+- Die Font-Auswahl wurde um die System-Fonts San Francisco, New York, San Francisco Rounded und San Francisco Mono sowie den Schriften Marker Felt, Comic Sans, Chalkboard, Rockwell erweitert.
+
+### Geändert (Changed)
+
+- Datenbestand vom 20.01.2025 mit 171685 Einträgen.
+
 ## v2024.11.09
 
 ### Geändert (Changed)

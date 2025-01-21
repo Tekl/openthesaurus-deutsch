@@ -187,6 +187,54 @@
 			<xsl:apply-templates select="@*|node()" />
 		</xsl:copy>
 	</xsl:if>
+	<xsl:if test="$Font = '29'">
+		<xsl:copy>
+			<xsl:attribute name="style">font-family: ui-serif</xsl:attribute>
+			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:if>
+	<xsl:if test="$Font = '30'">
+		<xsl:copy>
+			<xsl:attribute name="style">font-family: ui-sans-serif'</xsl:attribute>
+			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:if>
+	<xsl:if test="$Font = '31'">
+		<xsl:copy>
+			<xsl:attribute name="style">font-family: ui-rounded</xsl:attribute>
+			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:if>
+	<xsl:if test="$Font = '32'">
+		<xsl:copy>
+			<xsl:attribute name="style">font-family: ui-monospace</xsl:attribute>
+			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:if>
+	<xsl:if test="$Font = '33'">
+		<xsl:copy>
+			<xsl:attribute name="style">font-family: 'Marker Felt'</xsl:attribute>
+			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:if>
+	<xsl:if test="$Font = '34'">
+		<xsl:copy>
+			<xsl:attribute name="style">font-family: 'Chalkboard'</xsl:attribute>
+			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:if>
+	<xsl:if test="$Font = '35'">
+		<xsl:copy>
+			<xsl:attribute name="style">font-family: 'Comic Sans MS'</xsl:attribute>
+			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:if>
+	<xsl:if test="$Font = '36'">
+		<xsl:copy>
+			<xsl:attribute name="style">font-family: 'Rockwell'</xsl:attribute>
+			<xsl:apply-templates select="@*|node()" />
+		</xsl:copy>
+	</xsl:if>
 </xsl:template>
 
 <!-- Default rule for all other tags -->
