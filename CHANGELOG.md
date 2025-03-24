@@ -4,7 +4,7 @@ Sorry, there’s no english changelog.
 
 ## v2025.03.24
 
-###m Geändert (Changed)
+### Geändert (Changed)
 
 - Datenbestand vom 23.3.2025 mit 172370 Einträgen.
 
