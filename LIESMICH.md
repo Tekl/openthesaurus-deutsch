@@ -16,7 +16,7 @@ Das Python-Skript zur Umwandlung der OpenThesaurus-Wörterbuchdatei in ein Apple
 **Updates und weiterführende Informationen:** [www.tekl.de](https://tekl.de)  
 **Support und Quellcode:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)  
 **Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)  
-**Spende:** [PayPal](https://www.paypal.me/WolfgangReszel)
+**Spende:** [PayPal](https://www.paypal.me/WolfgangKreutz64)
 
 ### Download
 
