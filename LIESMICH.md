@@ -2,8 +2,8 @@
 
 ## OpenThesaurus Deutsch Lexikon-Plug-in
 
-_Version: 2025.03.24 - OS X 10.11 bis macOS 15_  
-_Copyright © 2025 Wolfgang Kreutz und Daniel Naber_
+_Version: 2026.01.06 - OS X 10.11 bis macOS 15_  
+_Copyright © 2026 Wolfgang Kreutz und Daniel Naber_
 
 ![Screenshot](images/screenshots/OpenThesaurus_Screen_1.png)
 
@@ -68,40 +68,38 @@ Falls Sie das Plug-in via Homebrew installiert haben, werden Sie es mit folgende
 - [Xcode](https://apps.apple.com/de/app/xcode/id497799835?mt=12)
 - [Dictionary Development Kit als Teil der Additional Tools](https://developer.apple.com/download/all/?q=Additional%20Tools) (kostenlose Entwickler-Account erforderlich)
 - Das DDK muss in einem der folgenden Pfade installiert sein:
-  - `/Developer/Auxiliary Tools/Dictionary Development Kit`
-  - `/Developer/Utilities/Dictionary Development Kit`
-  - `/Applications/Auxiliary Tools/Dictionary Development Kit`
-  - `/Applications/Additional Tools/Utilities/Dictionary Development Kit`
-  - `/DevTools/Utilities/Dictionary Development Kit`
-  - `/Applications/Utilities/Dictionary Development Kit`
+    - `/Developer/Auxiliary Tools/Dictionary Development Kit`
+    - `/Developer/Utilities/Dictionary Development Kit`
+    - `/Applications/Auxiliary Tools/Dictionary Development Kit`
+    - `/Applications/Additional Tools/Utilities/Dictionary Development Kit`
+    - `/DevTools/Utilities/Dictionary Development Kit`
+    - `/Applications/Utilities/Dictionary Development Kit`
 - Die Xcode Command Line Tools müssen installiert sein: `
  xcode-select --install`
-- *Optional:* Für das Generieren des Installers benötigt man das kostenlose Tool [Packages](http://s.sudre.free.fr/Software/Packages/about.html)
-- *Optional:* Um das Disk Image automatisch zu erstellen, benötigt man [DMG Canvas](https://www.araelium.com/dmgcanvas) (20 US-$).
+- *Optional:* Für das Generieren des Installers benötigt man das kostenlose Tool [Packages](http://s.sudre.free.fr/Software/Packages/about.html) mit Festplattenvollzugriff.
+- *Optional:* Um das Disk Image automatisch zu erstellen, benötigt man [DMG Canvas](https://www.araelium.com/dmgcanvas) (20 US-$).
 
 #### Generierung im Terminal starten
 
 - Terminal öffnen
-- Mit `cd`in den Ordner `openthesaurus-deutsch-master`wechseln.
+- Mit `cd` in den Ordner `openthesaurus-deutsch-master` wechseln.
 - Die Generierung mit `make` starten. Damit wird die aktuelle Wortliste von openthesaurus.de heruntergeladen, nach XML konvertiert und dann mit dem DDK in ein Lexikon-Plug-in konvertiert. Die Versionsnummer wird aus dem aktuellen Datum generiert und um **-beta** ergänzt.
 - Die Umwandlung ist recht zeitintensiv und kann je nach Mac auch über eine Stunde dauern.
-- Erscheint im Terminal der Prompt, installiert man das fertige Plug-in mit `sudo make install`. Das ist auch erforderlich, um den Installer zu erstellen. Dieser erwartet das Plug-in unter /Library/Dictionaries.
+- Erscheint im Terminal der Prompt, installiert man das fertige Plug-in mit `make install` in den Ordner `~/Library/Dictionaries`.
 - Nach der Installation wird das Lexikon automatisch geöffnet und man kann das Plug-in aktivieren und testen.
 - Das make-Kommando versteht folgende weitere Targets:
-  - `make release`generiert das Plug-in ohne Endung „-beta“ bei der Versionsnummer.
-  - `make dmg`packt das installierte **Beta**-Plug-in in einen Installer und diesen in ein Disk Image (bitte Voraussetzungen beachten). Das Makefile ist allerdings auf mein Entwickler-Zertifikat vorbereitet, man muss es also in der Zeile mit `packagesbuild`austauschen. Die fertigen Disk Images liegen im Ordner `releases`.
-  - `make releasedmg`packt das installierte Plug-in ohne -beta-Zusatz bei der Versionsnummer in einen Installer und diesen in ein Disk Image (bitte Voraussetzungen beachten). Das Makefile ist allerdings auf mein Entwickler-Zertifikat vorbereitet. Das muss man in der Zeile mit `packagesbuild`austauschen.
-  - `make notarize`schickt das zum aktuellen Datum passende Disk Image aus `releases`zur Notarisierung an Apple. Auch hier muss das Makefile bearbeiten und seinen Entwickler-Account bei `xcrun altool`hinter `--username`angeben. Das Password holt sich das Makefile aus dem Schlüsselbundeintrag `AC_PASSWORD`.
-  - `make nhistory`zeigt den Notarisierungsstatus an. Besser, man wartet auf die Bestätigungs-Mail von Apple. 
-  - `make nstaple`wendet bei erfolgreicher Notarisierung das Ticket auf das Disk Image an, womit es dann korrekt notarisiert und bereit für die Veröffentlichung ist.
-
+  - `make release` generiert das Plug-in ohne Endung „-beta“ bei der Versionsnummer.
+  - `make dmg` packt das installierte **Beta**-Plug-in in einen Installer und diesen in ein Disk Image (bitte Voraussetzungen beachten). Das Makefile ist allerdings auf mein Entwickler-Zertifikat vorbereitet, man muss es also in der Zeile mit `packagesbuild` austauschen. Die fertigen Disk Images liegen im Ordner `releases`.
+  - `make releasedmg` packt das installierte Plug-in ohne -beta-Zusatz bei der Versionsnummer in einen Installer und diesen in ein Disk Image (bitte Voraussetzungen beachten). Das Makefile ist allerdings auf mein Entwickler-Zertifikat vorbereitet. Das muss man in der Zeile mit `packagesbuild` austauschen.
+  - `make notarize` schickt das zum aktuellen Datum passende Disk Image aus `releases` zur Notarisierung an Apple. Auch hier muss das Makefile bearbeiten und seinen Entwickler-ID bei `xcrun notarytool` hinter `--keychain-profile` angeben. Den Account muss man zuvor über `xcrun notarytool store-credentials` im Schlüsselbund hinterlegt haben.
+  
 ### Lizenzen
 
 - Der Inhalt des OpenThesaurus-Plug-ins unterliegt der [CC-GNU LGPL](https://creativecommons.org/licenses/LGPL/2.1/)
 - Das Lexikon-Plug-in und die zur Erstellung verwendeten Skripte unterliegen der [GPLv3](https://www.gnu.org/licenses/gpl.html)  
-
-  Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 3 der Lizenz oder jeder späteren Version.  
-  
-  Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Detals finden Sie in der GNU General Public License.  
-  
-  Sie sollten ein Exemplar der [GNU General Public License](LICENSE) zusammen mit diesem Programm erhalten haben. Falls nicht, siehe https://www.gnu.org/licenses/.
+    
+    Dieses Programm ist freie Software. Sie können es unter den Bedingungen der GNU General Public License, wie von der Free Software Foundation veröffentlicht, weitergeben und/oder modifizieren, entweder gemäß Version 3 der Lizenz oder jeder späteren Version.  
+    
+    Die Veröffentlichung dieses Programms erfolgt in der Hoffnung, daß es Ihnen von Nutzen sein wird, aber OHNE IRGENDEINE GARANTIE, sogar ohne die implizite Garantie der MARKTREIFE oder der VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK. Detals finden Sie in der GNU General Public License.  
+    
+    Sie sollten ein Exemplar der [GNU General Public License](LICENSE) zusammen mit diesem Programm erhalten haben. Falls nicht, siehe https://www.gnu.org/licenses/.
