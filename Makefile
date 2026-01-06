@@ -144,7 +144,7 @@ shasum:
 	@open -a Nova /opt/homebrew/Library/Taps/tekl/homebrew-dictionaries/Casks/openthesaurus-deutsch.rb
 
 clean:
-	$(RM) -rf $(DICT_DEV_KIT_OBJ_DIR)
-	$(RM) -rf $(DICT_DEV_KIT_OBJ_DIR)_leo
-	$(RM) -f $(DICT_SRC_PATH)
+	$(RM) "-rf $(DICT_DEV_KIT_OBJ_DIR)"
+	$(RM) "-rf $(DICT_DEV_KIT_OBJ_DIR)_leo"
+	$(RM) "-f $(DICT_SRC_PATH)"
 	@afplay /System/Library/Sounds/Purr.aiff > /dev/null
