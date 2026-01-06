@@ -2,6 +2,12 @@
 
 Sorry, there’s no english changelog.
 
+## v2026.01.06
+
+### Geändert (Changed)
+
+- Datenbestand vom 5.1.2026 mit 176049 Einträgen.
+
 ## v2025.03.24
 
 ### Geändert (Changed)
