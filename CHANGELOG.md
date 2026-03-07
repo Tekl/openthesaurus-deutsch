@@ -2,6 +2,13 @@
 
 Sorry, there’s no english changelog.
 
+## v2026.03.07
+
+### Geändert (Changed)
+
+- Datenbestand vom 6.3.2026 mit 176735 Einträgen.
+- Icons modernisiert.
+
 ## v2026.01.06
 
 ### Geändert (Changed)
