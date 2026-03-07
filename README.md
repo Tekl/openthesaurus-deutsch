@@ -16,7 +16,7 @@ The Python script to convert the OpenThesaurus dictionary into a dictionary plug
 **Updates and further information:** [www.tekl.de](https://tekl.de)  
 **Support and source code:** [github.com/Tekl/openthesaurus-deutsch](https://github.com/Tekl/openthesaurus-deutsch)  
 **Changelog:** [CHANGELOG.md](https://github.com/Tekl/openthesaurus-deutsch/blob/master/CHANGELOG.md)  
-**Donation:** [PayPal](https://www.paypal.me/WolfgangKreutz64)
+**Tip:** [PayPal](https://www.paypal.me/WolfgangKreutz64)
 
 ### Download
 
